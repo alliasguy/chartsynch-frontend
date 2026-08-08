@@ -1,0 +1,199 @@
+.promo-section {
+    width: 100%;
+    padding: 0 0 100px;
+    background: #000000;
+}
+
+/* App Promo Banner */
+.app-promo-banner {
+    background-color: #000000;
+    border-radius: 24px;
+    padding: 60px 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 40px;
+    border: 1px solid var(--slate-800);
+    /* Subtle map background effect could go here */
+    background-image: radial-gradient(circle at 10% 20%, rgba(37, 37, 37, 0.4) 0%, rgba(0, 0, 0, 0) 80%);
+}
+
+.app-promo-content {
+    flex: 1;
+    max-width: 600px;
+    z-index: 2;
+}
+
+.app-promo-content h2 {
+    font-size: 3rem;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 30px;
+    line-height: 1.2;
+}
+
+.app-features {
+    display: flex;
+    gap: 24px;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+}
+
+.feature-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #e2e8f0;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.check-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20px;
+    height: 20px;
+    background-color: #22c55e;
+    color: black;
+    border-radius: 50%;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.store-buttons {
+    display: flex;
+    gap: 16px;
+}
+
+.store-btn {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background-color: #000;
+    border: 1px solid #475569;
+    border-radius: 12px;
+    padding: 8px 20px;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    min-width: 160px;
+}
+
+.store-btn:hover {
+    border-color: #94a3b8;
+    background-color: #0f172a;
+}
+
+.store-icon svg {
+    width: 28px;
+    height: 28px;
+}
+
+.store-text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.store-text .small-text {
+    font-size: 10px;
+    color: #cbd5e1;
+}
+
+.store-text .large-text {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.app-promo-image {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    position: relative;
+    z-index: 1;
+}
+
+.phone-mockup-placeholder img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 12px;
+    /* Simulate overlapping phones styling */
+    transform: rotate(-5deg);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+}
+
+/* Webinar Banner */
+.webinar-banner {
+    background-color: #000000;
+    border: 1px solid var(--slate-800);
+    border-radius: 24px;
+    padding: 30px 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.webinar-content h3 {
+    font-size: 1.5rem;
+    color: white;
+    font-weight: 500;
+    margin: 0;
+}
+
+.webinar-btn {
+    background-color: transparent;
+    border: 2px solid #22c55e;
+    color: white;
+    padding: 12px 32px;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: capitalize;
+}
+
+.webinar-btn:hover {
+    background-color: #22c55e;
+    color: black;
+}
+
+/* Responsive */
+@media (max-width: 990px) {
+    .app-promo-banner {
+        flex-direction: column;
+        padding: 40px 24px;
+        text-align: center;
+    }
+
+    .app-promo-content {
+        margin-bottom: 40px;
+        width: 100%;
+    }
+
+    .app-promo-content h2 {
+        font-size: 2rem;
+    }
+
+    .app-features {
+        justify-content: center;
+    }
+
+    .store-buttons {
+        justify-content: center;
+    }
+
+    .app-promo-image {
+        justify-content: center;
+    }
+
+    .webinar-banner {
+        flex-direction: column;
+        text-align: center;
+        gap: 24px;
+        padding: 40px 24px;
+    }
+}

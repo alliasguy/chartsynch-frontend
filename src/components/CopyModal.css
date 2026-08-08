@@ -1,0 +1,97 @@
+.mirror-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.mirror-modal-container {
+    background: #1a1a1a;
+    /* Dark theme matching app */
+    width: 90%;
+    max-width: 400px;
+    border-radius: 12px;
+    padding: 24px;
+    color: white;
+    border: 1px solid #333;
+}
+
+.mirror-modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #333;
+    padding-bottom: 10px;
+}
+
+.mirror-modal-header h3 {
+    margin: 0;
+    font-size: 1.2rem;
+    color: rgb(48, 193, 142);
+}
+
+.mirror-modal-header span {
+    cursor: pointer;
+    font-size: 1.5rem;
+}
+
+.mirror-modal-info {
+    font-size: 0.9rem;
+    color: #aaa;
+    margin-bottom: 16px;
+}
+
+.mirror-modal-balance {
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+    margin-bottom: 20px;
+    background: #2a2a2a;
+    padding: 10px;
+    border-radius: 8px;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 16px;
+}
+
+.input-group input {
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #444;
+    background: #000;
+    color: white;
+    font-size: 1rem;
+}
+
+.error-message {
+    color: #ff4d4d;
+    font-size: 0.85rem;
+    margin-bottom: 16px;
+}
+
+.confirm-mirror-btn {
+    width: 100%;
+    padding: 14px;
+    background: rgb(48, 193, 142);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.confirm-mirror-btn:hover {
+    background: rgb(38, 153, 112);
+}

@@ -1,0 +1,100 @@
+/* tradeInfo.css - Executive FinTech Market Cards */
+
+.tradeInfo-section {
+    width: 100%;
+    padding: 60px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--bg-deep, #07090e);
+    position: relative;
+}
+
+.tradeInfo-wrapper {
+    width: 90%;
+    max-width: 1240px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+}
+
+.forex-card {
+    flex: 1;
+    background: rgba(17, 23, 35, 0.65);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    padding: 28px 24px;
+    transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.forex-card:hover {
+    cursor: pointer;
+    transform: translateY(-6px);
+    background: rgba(22, 30, 46, 0.85);
+    border-color: rgba(48, 193, 142, 0.35);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5), 0 0 20px rgba(48, 193, 142, 0.12);
+}
+
+.forex-card .img {
+    width: 52px;
+    height: 52px;
+    border-radius: 14px;
+    background: rgba(48, 193, 142, 0.12);
+    border: 1px solid rgba(48, 193, 142, 0.25);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 16px;
+    flex-shrink: 0;
+}
+
+.forex-card .img svg {
+    font-size: 1.8rem;
+    color: #34d399;
+}
+
+.forex-card .textBox {
+    flex: 1;
+    color: white;
+}
+
+.forex-card .textContent {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 6px;
+}
+
+.forex-card .span {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #64748b;
+    text-transform: uppercase;
+}
+
+.forex-card .h1 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #ffffff;
+}
+
+.forex-card .p {
+    font-size: 0.88rem;
+    color: #94a3b8;
+    line-height: 1.45;
+}
+
+@media screen and (max-width: 990px) {
+    .tradeInfo-wrapper {
+        flex-direction: column;
+        gap: 16px;
+    }
+    .forex-card {
+        width: 100%;
+    }
+}

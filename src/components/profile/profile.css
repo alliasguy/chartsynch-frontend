@@ -1,0 +1,229 @@
+.settings-container-minimal {
+    width: 100%;
+    max-width: 1000px;
+    margin: 2rem auto;
+    padding: 0 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+}
+
+.settings-header-minimal {
+    margin-bottom: 1rem;
+}
+
+.settings-header-minimal h2 {
+    font-size: 2.25rem;
+    color: white;
+    margin-bottom: 0.5rem;
+}
+
+.settings-header-minimal p {
+    color: #94a3b8;
+    font-size: 1.1rem;
+}
+
+.settings-content-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 2rem;
+    align-items: start;
+}
+
+.settings-card-minimal {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 24px;
+    padding: 2rem;
+    backdrop-filter: blur(10px);
+}
+
+.card-header-minimal h3 {
+    font-size: 1.25rem;
+    color: white;
+    margin-bottom: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+/* Profile identity styles */
+.profile-upload-minimal {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1.5rem;
+}
+
+.profile-preview-wrapper {
+    position: relative;
+    width: 150px;
+    height: 150px;
+}
+
+.profile-preview-wrapper img,
+.profile-initials {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid rgba(255, 255, 255, 0.05);
+}
+
+.profile-initials {
+    background: var(--color-variant, #25acd0);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 4rem;
+    font-weight: 700;
+    color: white;
+}
+
+.camera-btn {
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    width: 42px;
+    height: 42px;
+    background: #25acd0;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    cursor: pointer;
+    border: 4px solid #0f172a;
+    transition: all 0.2s ease;
+}
+
+.camera-btn input[type="file"] {
+    display: none;
+}
+
+.camera-btn:hover {
+    transform: scale(1.1);
+    background: #38bdf8;
+}
+
+.profile-data-minimal h4 {
+    font-size: 1.5rem;
+    color: white;
+    margin-bottom: 0.25rem;
+}
+
+.profile-data-minimal p {
+    color: #94a3b8;
+    margin-bottom: 1rem;
+}
+
+.account-badge {
+    padding: 0.4rem 1rem;
+    background: rgba(16, 185, 129, 0.1);
+    color: #10b981;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+/* Form styles */
+.minimal-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.form-item-minimal {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.form-item-minimal label {
+    font-size: 0.9rem;
+    color: #cbd5e1;
+    font-weight: 500;
+}
+
+.input-wrapper-minimal {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.input-wrapper-minimal input {
+    width: 100%;
+    background: rgba(0, 0, 0, 0.2);
+    border: 1.5px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 0.85rem 3rem 0.85rem 1rem;
+    color: white;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.input-wrapper-minimal input:focus {
+    outline: none;
+    border-color: #25acd0;
+    box-shadow: 0 0 0 2px rgba(37, 172, 208, 0.15);
+}
+
+.toggle-eye {
+    position: absolute;
+    right: 1rem;
+    background: none;
+    border: none;
+    color: #64748b;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    padding: 0;
+    width: 2rem;
+    height: 2rem;
+}
+
+.toggle-eye:hover {
+    color: white;
+}
+
+.submit-btn-minimal {
+    margin-top: 1rem;
+    background: #25acd0;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    padding: 1rem;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.submit-btn-minimal:hover {
+    background: #38bdf8;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(37, 172, 208, 0.3);
+}
+
+@media (max-width: 900px) {
+    .settings-content-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 600px) {
+    .settings-container-minimal {
+        padding: 0 1rem;
+    }
+
+    .settings-header-minimal h2 {
+        font-size: 1.75rem;
+    }
+
+    .settings-card-minimal {
+        padding: 1.5rem;
+    }
+}

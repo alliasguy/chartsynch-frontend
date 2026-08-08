@@ -1,0 +1,312 @@
+/* plan.css - Executive FinTech Pricing Tier Theme */
+
+.plan-section {
+  width: 100%;
+  padding: 100px 24px;
+  background: var(--bg-deep, #07090e);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.plan-section::before {
+  content: '';
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 800px;
+  height: 400px;
+  background: radial-gradient(ellipse at center, rgba(48, 193, 142, 0.12) 0%, rgba(6, 182, 212, 0.05) 50%, transparent 70%);
+  filter: blur(100px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.plan-header-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 16px;
+  max-width: 760px;
+  position: relative;
+  z-index: 1;
+  margin-bottom: 56px;
+}
+
+.plan-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 16px;
+  background: rgba(48, 193, 142, 0.08);
+  border: 1px solid rgba(48, 193, 142, 0.25);
+  border-radius: 9999px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--accent-emerald, #30c18e);
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.badge-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: var(--accent-emerald, #30c18e);
+  box-shadow: 0 0 10px var(--accent-emerald, #30c18e);
+  animation: pulseDot 2s infinite ease-in-out;
+}
+
+@keyframes pulseDot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(0.8); }
+}
+
+.plan-title {
+  font-size: 2.75rem;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+
+.plan-subtitle {
+  font-size: 1.1rem;
+  color: #94a3b8;
+  line-height: 1.6;
+}
+
+/* Plan Card Grid */
+.plan-card-container {
+  width: 100%;
+  max-width: 1240px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  position: relative;
+  z-index: 1;
+}
+
+.pack-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 32px 28px;
+  background: rgba(17, 23, 35, 0.65);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  overflow: hidden;
+}
+
+.pack-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.15), transparent);
+  transition: all 0.35s ease;
+}
+
+.pack-container:hover {
+  transform: translateY(-8px);
+  background: rgba(22, 30, 46, 0.85);
+  border-color: rgba(48, 193, 142, 0.35);
+  box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.6), 0 0 30px rgba(48, 193, 142, 0.12);
+}
+
+.pack-container:hover::before {
+  background: linear-gradient(90deg, transparent, var(--accent-emerald, #30c18e), transparent);
+}
+
+/* Featured / Popular Tier */
+.pack-container.pack-featured {
+  border-color: rgba(6, 182, 212, 0.4);
+  background: rgba(17, 26, 42, 0.75);
+  box-shadow: 0 15px 35px -10px rgba(6, 182, 212, 0.15);
+}
+
+.pack-container.pack-featured::before {
+  background: linear-gradient(90deg, #30c18e, #06b6d4);
+}
+
+.featured-ribbon {
+  position: absolute;
+  top: 16px;
+  right: -32px;
+  transform: rotate(45deg);
+  background: linear-gradient(135deg, #30c18e, #06b6d4);
+  color: #07090e;
+  font-size: 0.7rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  padding: 4px 36px;
+  letter-spacing: 0.8px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+/* Pack Header */
+.pack-header {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.pack-type-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.pack-type-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.pack-chip {
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 9999px;
+}
+
+.chip-emerald {
+  background: rgba(48, 193, 142, 0.12);
+  color: #34d399;
+  border: 1px solid rgba(48, 193, 142, 0.3);
+}
+
+.chip-cyan {
+  background: rgba(6, 182, 212, 0.12);
+  color: #38bdf8;
+  border: 1px solid rgba(6, 182, 212, 0.3);
+}
+
+.chip-gold {
+  background: rgba(245, 158, 11, 0.12);
+  color: #fbbf24;
+  border: 1px solid rgba(245, 158, 11, 0.3);
+}
+
+.pack-price-box {
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+}
+
+.price-currency {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--accent-emerald, #30c18e);
+}
+
+.price-value {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #ffffff;
+  letter-spacing: -0.03em;
+}
+
+.price-suffix {
+  font-size: 0.9rem;
+  color: #64748b;
+  margin-left: 4px;
+}
+
+/* Features List */
+.lot-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 24px 0;
+}
+
+.lot-container {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.lot-bullet {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--accent-emerald, #30c18e);
+  flex-shrink: 0;
+}
+
+.lot-container p {
+  font-size: 0.9rem;
+  color: #cbd5e1;
+  margin: 0;
+}
+
+.lot-container strong {
+  color: #ffffff;
+  font-weight: 600;
+}
+
+/* Plan CTA Button */
+.plan-cta-btn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 14px 20px;
+  background: linear-gradient(135deg, rgba(48, 193, 142, 0.15) 0%, rgba(6, 182, 212, 0.1) 100%);
+  border: 1px solid rgba(48, 193, 142, 0.35);
+  border-radius: 12px;
+  color: #ffffff;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  margin-top: 12px;
+}
+
+.plan-cta-btn:hover {
+  background: linear-gradient(135deg, #30c18e 0%, #06b6d4 100%);
+  color: #07090e;
+  box-shadow: 0 8px 20px rgba(48, 193, 142, 0.35);
+  transform: translateY(-2px);
+}
+
+.plan-cta-btn svg {
+  transition: transform 0.25s ease;
+}
+
+.plan-cta-btn:hover svg {
+  transform: translateX(4px);
+}
+
+/* Responsive Breakpoints */
+@media (max-width: 1100px) {
+  .plan-card-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .plan-section {
+    padding: 60px 16px;
+  }
+  .plan-title {
+    font-size: 2rem;
+  }
+  .plan-card-container {
+    grid-template-columns: 1fr;
+  }
+}

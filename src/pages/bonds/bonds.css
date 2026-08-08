@@ -1,0 +1,222 @@
+.bonds-page-section {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: var(--primary-color);
+    overflow: hidden;
+}
+
+.bonds-page-wrapper {
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding-top: 40px;
+}
+
+.bonds-hero-section {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    padding: 50px;
+}
+
+.bonds-page-video {
+    width: 100%;
+    height: 100%;
+    border: 1px solid hsl(0, 0%, 26%);
+    border-radius: 10px;
+}
+
+.bonds-floating-widget-right {
+    position: absolute;
+    background-color: var(--primary-color);
+    border: 1px solid hsl(0, 0%, 26%);
+    border-radius: 10px;
+    padding: 20px;
+    top: -20px;
+    left: -20px;
+}
+
+.bonds-floating-widget-left {
+    position: absolute;
+    background-color: var(--primary-color);
+    border: 1px solid hsl(0, 0%, 26%);
+    border-radius: 10px;
+    padding: 20px;
+    bottom: -20px;
+    right: -20px;
+}
+
+.bonds-text-section {
+    padding-top: 40px;
+    align-self: center;
+}
+
+.bonds-copy-trade-section {
+    width: 100%;
+    margin-bottom: 40px;
+}
+
+/* Bonds Feature Cards Section */
+.bonds-features-section {
+    width: 100%;
+    padding: 80px 20px;
+    background: linear-gradient(135deg, #000000 0%, #0a0a0a 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.bonds-features-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.bonds-features-header h2 {
+    font-size: 2.5rem;
+    color: white;
+    margin-bottom: 15px;
+}
+
+.bonds-features-header p {
+    font-size: 1.1rem;
+    color: #999;
+}
+
+.bonds-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.bonds-feature-card {
+    background: linear-gradient(145deg, #111111 0%,
+            #000000 100%);
+    border: 2px solid #2a2a2a;
+    border-radius: 20px;
+    padding: 40px 30px;
+    text-align: center;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+    overflow: hidden;
+}
+
+.bonds-feature-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(6, 124, 220, 0.1), transparent);
+    transition: left 0.5s;
+}
+
+.bonds-feature-card:hover::before {
+    left: 100%;
+}
+
+.bonds-feature-card:hover {
+    transform: translateY(-10px);
+    border-color: rgb(48, 193, 142);
+    box-shadow: 0 20px 40px rgba(48, 193, 142, 0.2);
+}
+
+.bonds-card-icon {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 25px;
+    background: linear-gradient(135deg, #000000 0%,
+            #0a0a0a 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.bonds-feature-card:hover .bonds-card-icon {
+    transform: scale(1.1) rotate(5deg);
+    box-shadow: 0 10px 30px rgb(2, 42, 68);
+}
+
+.bonds-card-icon svg {
+    width: 40px;
+    height: 40px;
+    color: rgb(48, 193, 142);
+}
+
+.bonds-feature-card h3 {
+    font-size: 1.5rem;
+    color: rgb(48, 193, 142);
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.bonds-feature-card p {
+    font-size: 1rem;
+    color: #bbb;
+    line-height: 1.6;
+}
+
+@media screen and (max-width: 990px) {
+    .bonds-img-container {
+        width: 100%;
+    }
+
+    .bonds-img {
+        width: 100%;
+        object-fit: contain;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .bonds-page-video {
+        display: none;
+    }
+
+    .bonds-floating-widget-left {
+        position: static;
+        width: 95%;
+        overflow: hidden;
+    }
+
+    .bonds-floating-widget-right {
+        position: static;
+        width: 95%;
+        margin: 20px 0px;
+        overflow: hidden;
+    }
+
+    .bonds-hero-section {
+        flex-direction: column;
+        width: 100%;
+        padding: 0px;
+    }
+
+    .bonds-page-wrapper {
+        width: 100%;
+    }
+
+    .bonds-features-header h2 {
+        font-size: 2rem;
+    }
+
+    .bonds-cards-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .bonds-feature-card {
+        padding: 30px 20px;
+    }
+}

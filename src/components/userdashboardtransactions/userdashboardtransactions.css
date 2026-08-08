@@ -1,0 +1,130 @@
+/* userdashboardtransactions.css - Executive FinTech Transaction Ledger */
+
+.trans-page {
+    width: 92%;
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 40px 0 80px;
+}
+
+.transaction-container {
+    width: 100%;
+    background: rgba(17, 23, 35, 0.75);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 24px;
+    padding: 32px;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.6);
+    overflow-x: auto;
+    margin-top: 32px;
+}
+
+.transaction-container table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 8px;
+    color: #ffffff;
+}
+
+.transaction-container thead tr {
+    background: transparent;
+}
+
+.transaction-container thead td,
+.transaction-container thead th {
+    padding: 14px 20px;
+    color: #64748b;
+    font-size: 0.82rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.transaction-container tbody tr {
+    background: rgba(255, 255, 255, 0.02);
+    border-radius: 14px;
+    transition: all 0.25s ease;
+}
+
+.transaction-container tbody tr:hover {
+    background: rgba(48, 193, 142, 0.08);
+    transform: scale(1.005);
+}
+
+.transaction-container tbody td {
+    padding: 18px 20px;
+    font-size: 0.95rem;
+    color: #cbd5e1;
+    border-top: 1px solid rgba(255, 255, 255, 0.04);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.transaction-container tbody tr td:first-child {
+    border-top-left-radius: 14px;
+    border-bottom-left-radius: 14px;
+    border-left: 1px solid rgba(255, 255, 255, 0.04);
+    font-weight: 700;
+    color: #ffffff;
+}
+
+.transaction-container tbody tr td:last-child {
+    border-top-right-radius: 14px;
+    border-bottom-right-radius: 14px;
+    border-right: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+/* Empty Page / No History state */
+.empty-page {
+    width: 100%;
+    max-width: 600px;
+    margin: 40px auto;
+    background: rgba(17, 23, 35, 0.75);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 28px;
+    padding: 48px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
+}
+
+.empty-img {
+    width: 220px;
+    height: 220px;
+    object-fit: contain;
+    margin-bottom: 24px;
+    filter: drop-shadow(0 0 20px rgba(48, 193, 142, 0.2));
+}
+
+.empty-page p {
+    color: #94a3b8;
+    font-size: 1.05rem;
+    margin-bottom: 28px;
+    line-height: 1.6;
+}
+
+.empty-page a {
+    padding: 14px 40px;
+    background: linear-gradient(135deg, #30c18e 0%, #06b6d4 100%);
+    color: #07090e;
+    font-weight: 700;
+    font-size: 0.98rem;
+    border-radius: 9999px;
+    box-shadow: 0 8px 25px rgba(48, 193, 142, 0.35);
+    transition: all 0.3s ease;
+}
+
+.empty-page a:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 30px rgba(48, 193, 142, 0.5);
+}
+
+@media screen and (max-width: 768px) {
+    .transaction-container { padding: 16px; }
+    .transaction-container tbody td { padding: 14px 12px; font-size: 0.88rem; }
+}

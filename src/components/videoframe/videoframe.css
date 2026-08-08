@@ -1,0 +1,27 @@
+.videoframe-section {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.video-wrapper {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+    padding: 0px 0px;
+}
+
+
+@media screen and (max-width: 767px) {
+    .video-wrapper .video {
+        object-fit: contain;
+    }
+
+    .video-wrapper {
+        padding: 10px 0px 20px 0px;
+    }
+}

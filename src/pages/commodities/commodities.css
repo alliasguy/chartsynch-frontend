@@ -1,0 +1,250 @@
+.commodities-page-section {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: var(--primary-color);
+    overflow: hidden;
+}
+
+.commodities-page-wrapper {
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding-top: 40px;
+}
+
+.commodities-hero-section {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    padding: 50px;
+}
+
+.commodities-page-video {
+    width: 100%;
+    height: 100%;
+    border: 1px solid hsl(0, 0%, 26%);
+    border-radius: 10px;
+}
+
+.commodities-floating-widget-right {
+    position: absolute;
+    background-color: var(--primary-color);
+    border: 1px solid hsl(0, 0%, 26%);
+    border-radius: 10px;
+    padding: 20px;
+    top: -20px;
+    left: -20px;
+}
+
+.commodities-floating-widget-left {
+    position: absolute;
+    background-color: var(--primary-color);
+    border: 1px solid hsl(0, 0%, 26%);
+    border-radius: 10px;
+    padding: 20px;
+    bottom: -20px;
+    right: -20px;
+}
+
+.commodities-text-section {
+    padding-top: 40px;
+    align-self: center;
+}
+
+.commodities-copy-trade-section {
+    width: 100%;
+    margin-bottom: 40px;
+}
+
+/* Commodities Type Cards Section */
+.commodities-types-section {
+    width: 100%;
+    padding: 80px 20px;
+    background: linear-gradient(180deg, #000000 0%, #1a1a1a 50%, #000000 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.commodities-types-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.commodities-types-header h2 {
+    font-size: 2.5rem;
+    color: white;
+    margin-bottom: 15px;
+}
+
+.commodities-types-header p {
+    font-size: 1.1rem;
+    color: #999;
+}
+
+.commodities-cards-wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.commodity-type-card {
+    position: relative;
+    border-radius: 20px;
+    padding: 40px 30px;
+    min-height: 350px;
+    overflow: hidden;
+    transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+    cursor: pointer;
+}
+
+.commodity-card-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #1a1a1a 0%, #0d0d0d 100%);
+    border: 2px solid #2a2a2a;
+    border-radius: 20px;
+    transition: all 0.5s ease;
+}
+
+.commodity-type-card:hover .commodity-card-bg {
+    transform: scale(1.05);
+    border-color: #E6B80B;
+    box-shadow: 0 20px 50px rgba(230, 184, 11, 0.3);
+}
+
+.commodity-card-content {
+    position: relative;
+    z-index: 1;
+}
+
+.commodity-icon {
+    font-size: 4rem;
+    margin-bottom: 20px;
+    filter: grayscale(100%);
+    transition: all 0.3s ease;
+}
+
+.commodity-type-card:hover .commodity-icon {
+    filter: grayscale(0%);
+    transform: scale(1.1);
+}
+
+.commodity-type-card h3 {
+    font-size: 1.8rem;
+    color: #E6B80B;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.commodity-type-card p {
+    font-size: 1rem;
+    color: #888;
+    margin-bottom: 25px;
+    font-weight: 500;
+}
+
+.commodity-type-card ul {
+    list-style: none;
+    padding: 0;
+}
+
+.commodity-type-card li {
+    color: #bbb;
+    font-size: 0.95rem;
+    margin-bottom: 12px;
+    padding-left: 25px;
+    position: relative;
+}
+
+.commodity-type-card li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: #E6B80B;
+    font-weight: bold;
+}
+
+/* Unique colors for each commodity type */
+.commodity-gold:hover .commodity-card-bg {
+    background: linear-gradient(135deg, rgba(230, 184, 11, 0.1) 0%, #0d0d0d 100%);
+}
+
+.commodity-energy:hover .commodity-card-bg {
+    background: linear-gradient(135deg, rgba(230, 184, 11, 0.08) 0%, #0d0d0d 100%);
+}
+
+.commodity-agriculture:hover .commodity-card-bg {
+    background: linear-gradient(135deg, rgba(230, 184, 11, 0.06) 0%, #0d0d0d 100%);
+}
+
+.commodity-industrial:hover .commodity-card-bg {
+    background: linear-gradient(135deg, rgba(230, 184, 11, 0.04) 0%, #0d0d0d 100%);
+}
+
+@media screen and (max-width: 990px) {
+    .commodities-img-container {
+        width: 100%;
+    }
+
+    .commodities-img {
+        width: 100%;
+        object-fit: contain;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .commodities-page-video {
+        display: none;
+    }
+
+    .commodities-floating-widget-left {
+        position: static;
+        width: 95%;
+        overflow: hidden;
+    }
+
+    .commodities-floating-widget-right {
+        position: static;
+        width: 95%;
+        margin: 20px 0px;
+        overflow: hidden;
+    }
+
+    .commodities-hero-section {
+        flex-direction: column;
+        width: 100%;
+        padding: 0px;
+    }
+
+    .commodities-page-wrapper {
+        width: 100%;
+    }
+
+    .commodities-types-header h2 {
+        font-size: 2rem;
+    }
+
+    .commodities-cards-wrapper {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .commodity-type-card {
+        min-height: 300px;
+        padding: 30px 20px;
+    }
+}

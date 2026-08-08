@@ -1,0 +1,208 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #000000;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: rgb(48, 193, 142);
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Global Layout for Analytics & Generic Pages */
+.forex-page-section {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: var(--primary-color);
+  min-height: 100vh;
+}
+
+.forex-page-wrapper {
+  width: 90%;
+  max-width: 1200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding-top: 40px;
+}
+
+.videoframe-text-container {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.videoframe-text-container h1 {
+  font-family: var(--font-hero);
+  /* Use the authentic homepage font */
+  font-size: 3.5rem;
+  font-weight: 800;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+}
+
+.highlight {
+  color: var(--color-variant);
+  display: inline-block;
+  /* Ensure highlight can be styled properly */
+}
+
+/* ... existing styles ... */
+
+/* Trading View Section & Cards */
+.trading-view-forex-section {
+  width: 90%;
+  /* Match the forex-page-wrapper width */
+  max-width: 1200px;
+  /* Match the forex-page-wrapper max-width */
+  margin: 0 auto;
+  /* Center the section itself */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 60px 0;
+}
+
+.trading-view-forex-wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  margin-top: 30px;
+}
+
+.trading-view-card {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 20px;
+  padding: 30px;
+  width: 100%;
+  /* Fill the constrained container */
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.trading-view-card-text-container h1 {
+  font-size: 1.5rem;
+  color: white;
+  margin-bottom: 10px;
+  text-transform: capitalize;
+}
+
+.trading-view-card-text-container p {
+  color: #ccc;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+/* Widget Container Sizing */
+.tradingview-widget-container {
+  width: 100% !important;
+  height: 600px !important;
+  /* Force explicit height for widgets */
+  min-height: 600px;
+}
+
+.tradingview-widget-container__widget {
+  width: 100%;
+  height: 100%;
+}
+
+.tesla-widget-text-container {
+  width: 100%;
+  max-width: 800px;
+  /* Constrain width for readability */
+  margin: 60px auto;
+  /* Center vertically and horizontally */
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+
+.tesla-widget-text-container h1 {
+  font-family: var(--font-hero);
+  font-size: 3rem;
+  font-weight: 800;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+  margin-bottom: 0;
+}
+
+.tesla-widget-text-container p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: var(--slate-400);
+  /* Muted text for premium feel */
+  max-width: 650px;
+  /* Optimal reading width */
+}
+
+.tesla-widget-btn-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.launch-btn {
+  /* Override global button styles if needed */
+  background: white !important;
+  color: black !important;
+  font-weight: 700 !important;
+  padding: 16px 32px !important;
+  border-radius: 50px !important;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  transition: transform 0.2s ease;
+  margin-left: 0 !important;
+  /* Fix potential existing margin */
+}
+
+.launch-btn:hover {
+  transform: scale(1.05);
+}
+
+/* Specific fix for News page event widget */
+.tesla-widget-chart-container {
+  height: 600px;
+  width: 100%;
+}

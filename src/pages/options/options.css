@@ -1,0 +1,246 @@
+.options-page-section {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: var(--primary-color);
+    overflow: hidden;
+}
+
+.options-page-wrapper {
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding-top: 40px;
+}
+
+.options-hero-section {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    padding: 50px;
+}
+
+.options-page-video {
+    width: 100%;
+    height: 100%;
+    border: 1px solid hsl(0, 0%, 26%);
+    border-radius: 10px;
+}
+
+.options-floating-widget-right {
+    position: absolute;
+    background-color: var(--primary-color);
+    border: 1px solid hsl(0, 0%, 26%);
+    border-radius: 10px;
+    padding: 20px;
+    top: -20px;
+    left: -20px;
+}
+
+.options-floating-widget-left {
+    position: absolute;
+    background-color: var(--primary-color);
+    border: 1px solid hsl(0, 0%, 26%);
+    border-radius: 10px;
+    padding: 20px;
+    bottom: -20px;
+    right: -20px;
+}
+
+.options-text-section {
+    padding-top: 40px;
+    align-self: center;
+}
+
+.options-copy-trade-section {
+    width: 100%;
+    margin-bottom: 40px;
+}
+
+/* Options Strategy Cards Section */
+.options-strategies-section {
+    width: 100%;
+    padding: 80px 20px;
+    background: radial-gradient(circle at top right, #1a1a1a 0%, #000000 100%);
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.options-strategies-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background:
+        linear-gradient(45deg, transparent 48%, rgba(230, 184, 11, 0.03) 50%, transparent 52%),
+        linear-gradient(-45deg, transparent 48%, rgba(230, 184, 11, 0.03) 50%, transparent 52%);
+    background-size: 40px 40px;
+    pointer-events: none;
+}
+
+.options-strategies-header {
+    text-align: center;
+    margin-bottom: 60px;
+    position: relative;
+    z-index: 1;
+}
+
+.options-strategies-header h2 {
+    font-size: 2.5rem;
+    color: white;
+    margin-bottom: 15px;
+}
+
+.options-strategies-header p {
+    font-size: 1.1rem;
+    color: #999;
+}
+
+.options-cards-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+
+.options-strategy-card {
+    background: linear-gradient(135deg, #1a1a1a 0%, #0d0d0d 100%);
+    border: 1px solid #2a2a2a;
+    border-radius: 15px;
+    padding: 35px 25px;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s ease;
+}
+
+.options-strategy-card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, #91770A 0%, #E6B80B 100%);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s ease;
+}
+
+.options-strategy-card:hover::after {
+    transform: scaleX(1);
+}
+
+.options-strategy-card:hover {
+    transform: translateY(-8px);
+    border-color: #E6B80B;
+    box-shadow: 0 15px 35px rgba(230, 184, 11, 0.25);
+}
+
+.options-card-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.options-card-number {
+    font-size: 2.5rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, #91770A 0%, #E6B80B 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    opacity: 0.3;
+}
+
+.options-strategy-card h3 {
+    font-size: 1.4rem;
+    color: white;
+    font-weight: 600;
+}
+
+.options-strategy-card p {
+    font-size: 0.95rem;
+    color: #aaa;
+    line-height: 1.7;
+    margin-bottom: 20px;
+}
+
+.options-card-badge {
+    display: inline-block;
+    padding: 6px 16px;
+    background: rgba(230, 184, 11, 0.1);
+    border: 1px solid #E6B80B;
+    border-radius: 20px;
+    color: #E6B80B;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+@media screen and (max-width: 990px) {
+    .options-img-container {
+        width: 100%;
+    }
+
+    .options-img {
+        width: 100%;
+        object-fit: contain;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .options-page-video {
+        display: none;
+    }
+
+    .options-floating-widget-left {
+        position: static;
+        width: 95%;
+        overflow: hidden;
+    }
+
+    .options-floating-widget-right {
+        position: static;
+        width: 95%;
+        margin: 20px 0px;
+        overflow: hidden;
+    }
+
+    .options-hero-section {
+        flex-direction: column;
+        width: 100%;
+        padding: 0px;
+    }
+
+    .options-page-wrapper {
+        width: 100%;
+    }
+
+    .options-strategies-header h2 {
+        font-size: 2rem;
+    }
+
+    .options-cards-container {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .options-strategy-card {
+        padding: 25px 20px;
+    }
+}

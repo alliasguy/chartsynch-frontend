@@ -1,0 +1,138 @@
+/* userdashboardcopytrade.css - Executive FinTech CopyTrade Dashboard */
+
+.copytrade-dashboard-wrapper {
+  width: 92%;
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 40px 0 80px;
+}
+
+.copytrade-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 28px;
+  margin-top: 36px;
+}
+
+.trader-card-glass {
+  background: rgba(17, 23, 35, 0.75);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 24px;
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+.trader-card-glass:hover {
+  transform: translateY(-8px);
+  background: rgba(22, 30, 46, 0.9);
+  border-color: rgba(48, 193, 142, 0.4);
+  box-shadow: 0 25px 50px -10px rgba(0, 0, 0, 0.6), 0 0 30px rgba(48, 193, 142, 0.15);
+}
+
+.trader-card-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.trader-avatar-box {
+  position: relative;
+}
+
+.trader-avatar-img {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #30c18e;
+  box-shadow: 0 0 15px rgba(48, 193, 142, 0.3);
+}
+
+.trader-status-dot {
+  position: absolute;
+  bottom: 2px;
+  right: 2px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #34d399;
+  border: 2px solid #0b0f17;
+  box-shadow: 0 0 8px #34d399;
+}
+
+.trader-name-box h3 {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 4px;
+}
+
+.trader-style-tag {
+  font-size: 0.78rem;
+  color: #38bdf8;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.trader-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  background: rgba(255, 255, 255, 0.03);
+  padding: 16px;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.trader-stat-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.trader-stat-item label {
+  font-size: 0.75rem;
+  color: #64748b;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.trader-stat-item span {
+  font-size: 1.1rem;
+  font-weight: 800;
+  margin-top: 2px;
+}
+
+.profit {
+  color: #34d399 !important;
+  text-shadow: 0 0 10px rgba(52, 211, 153, 0.3);
+}
+
+.loss {
+  color: #f87171 !important;
+}
+
+.copy-now-btn {
+  width: 100%;
+  padding: 14px;
+  background: linear-gradient(135deg, #30c18e 0%, #06b6d4 100%);
+  color: #07090e;
+  border: none;
+  border-radius: 12px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 15px rgba(48, 193, 142, 0.3);
+}
+
+.copy-now-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(48, 193, 142, 0.45);
+  filter: brightness(1.1);
+}

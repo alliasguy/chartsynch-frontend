@@ -1,0 +1,163 @@
+/* roadmap.css - Executive FinTech 3-Step Process Theme */
+
+.roadmapSection {
+    background: var(--bg-deep, #07090e);
+    padding: 100px 0;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.roadmapSection::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 800px;
+    height: 400px;
+    background: radial-gradient(ellipse at center, rgba(48, 193, 142, 0.1) 0%, rgba(6, 182, 212, 0.04) 50%, transparent 70%);
+    filter: blur(120px);
+    pointer-events: none;
+}
+
+.rodmapWrapper {
+    width: 90%;
+    max-width: 1240px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 60px;
+    position: relative;
+    z-index: 1;
+}
+
+.roadmap-header {
+    text-align: center;
+    max-width: 680px;
+}
+
+.roadmap-header h2 {
+    font-size: 0.88rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: #30c18e;
+    margin-bottom: 12px;
+}
+
+.roadmap-header h1 {
+    font-size: 2.75rem;
+    font-weight: 800;
+    color: #ffffff !important;
+    letter-spacing: -0.02em;
+    margin-bottom: 12px;
+}
+
+.roadmap-header p {
+    font-size: 1.1rem;
+    color: #94a3b8;
+    line-height: 1.6;
+}
+
+.roadmapContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    gap: 24px;
+}
+
+.roadmapCard {
+    background: rgba(17, 23, 35, 0.65);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 24px;
+    padding: 40px 32px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 24px;
+    position: relative;
+    transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+.roadmapCard:hover {
+    transform: translateY(-8px);
+    background: rgba(22, 30, 46, 0.85);
+    border-color: rgba(48, 193, 142, 0.35);
+    box-shadow: 0 25px 50px -10px rgba(0, 0, 0, 0.6), 0 0 30px rgba(48, 193, 142, 0.15);
+}
+
+.roadmapCounter {
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    background: rgba(11, 15, 23, 0.9);
+    border: 2px solid #30c18e;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 25px rgba(48, 193, 142, 0.3);
+    transition: transform 0.3s ease;
+}
+
+.roadmapCounter h1 {
+    font-size: 2rem !important;
+    font-weight: 800 !important;
+    color: #ffffff !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    line-height: 1 !important;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+.roadmapCard:hover .roadmapCounter {
+    transform: scale(1.08);
+    border-color: #38bdf8;
+    box-shadow: 0 0 30px rgba(6, 182, 212, 0.4);
+}
+
+.roadmapCardText h2 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #ffffff;
+    text-transform: capitalize;
+    margin-bottom: 12px;
+}
+
+.roadmapCardText p {
+    color: #94a3b8;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin: 0;
+}
+
+.roadmapSvgContainer {
+    color: #30c18e;
+    font-size: 1.6rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.7;
+}
+
+@media (max-width: 900px) {
+    .roadmapContainer {
+        flex-direction: column;
+    }
+
+    .roadmapSvgContainer {
+        transform: rotate(90deg);
+        margin: 8px 0;
+    }
+
+    .roadmapCard {
+        width: 100%;
+    }
+}

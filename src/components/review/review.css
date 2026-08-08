@@ -1,0 +1,142 @@
+/* review.css - Executive FinTech Client Testimonials */
+
+.review-section {
+    width: 100%;
+    padding: 80px 0 120px;
+    background: var(--bg-deep, #07090e);
+    position: relative;
+    overflow: hidden;
+}
+
+.review-section::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 800px;
+    height: 400px;
+    background: radial-gradient(ellipse at center, rgba(6, 182, 212, 0.1) 0%, rgba(48, 193, 142, 0.04) 50%, transparent 70%);
+    filter: blur(120px);
+    pointer-events: none;
+}
+
+.center-header {
+    text-align: center;
+    max-width: 680px;
+    margin: 0 auto 56px;
+}
+
+.center-header h2 {
+    font-size: 2.75rem;
+    font-weight: 800;
+    color: #ffffff;
+    letter-spacing: -0.02em;
+    margin-bottom: 12px;
+}
+
+.center-header p {
+    font-size: 1.1rem;
+    color: #94a3b8;
+}
+
+.review-grid {
+    width: 100%;
+    max-width: 1240px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+    padding: 0 24px;
+    position: relative;
+    z-index: 1;
+}
+
+.review-glass-card {
+    background: rgba(17, 23, 35, 0.65);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 24px;
+    padding: 36px 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    position: relative;
+}
+
+.review-glass-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, rgba(48, 193, 142, 0.3), transparent);
+    transition: opacity 0.3s;
+    opacity: 0;
+}
+
+.review-glass-card:hover {
+    transform: translateY(-8px);
+    background: rgba(22, 30, 46, 0.85);
+    border-color: rgba(48, 193, 142, 0.35);
+    box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.6), 0 0 25px rgba(48, 193, 142, 0.12);
+}
+
+.review-glass-card:hover::before {
+    opacity: 1;
+}
+
+.quote-icon {
+    font-size: 2.2rem;
+    color: #30c18e;
+    opacity: 0.8;
+}
+
+.review-text {
+    font-size: 0.98rem;
+    color: #cbd5e1;
+    line-height: 1.65;
+    flex: 1;
+}
+
+.reviewer-info {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-top: auto;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    padding-top: 20px;
+}
+
+.reviewer-img {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #30c18e;
+    box-shadow: 0 0 12px rgba(48, 193, 142, 0.3);
+}
+
+.reviewer-info h4 {
+    color: #ffffff;
+    font-size: 1.05rem;
+    margin: 0;
+    font-weight: 700;
+}
+
+.stars {
+    display: flex;
+    gap: 3px;
+    color: #fbbf24;
+    font-size: 0.85rem;
+    margin-top: 4px;
+}
+
+@media (max-width: 990px) {
+    .review-grid {
+        grid-template-columns: 1fr;
+    }
+}

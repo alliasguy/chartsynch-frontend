@@ -1,0 +1,135 @@
+/* userdashboardlivetrading.css - Executive FinTech Live Trading Suite */
+
+.userdashboard-live-chart-container {
+    width: 100%;
+    padding: 16px;
+    background: rgba(17, 23, 35, 0.75);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 24px;
+    margin: 30px 0;
+    height: 640px;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.6);
+    overflow: hidden;
+}
+
+.locked-section {
+    padding: 40px 20px;
+    width: 90%;
+    max-width: 600px;
+    margin: 40px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: rgba(17, 23, 35, 0.75);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 28px;
+    text-align: center;
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
+}
+
+.locked-img {
+    width: 100%;
+    max-width: 320px;
+    height: auto;
+    object-fit: contain;
+    filter: drop-shadow(0 0 20px rgba(48, 193, 142, 0.2));
+}
+
+.locked-text-container {
+    margin: 28px 0;
+}
+
+.locked-text-container h2 {
+    font-size: 1.8rem;
+    color: #ffffff;
+    font-weight: 800;
+    margin-bottom: 8px;
+}
+
+.locked-text-container p {
+    color: #94a3b8;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.locked-button {
+    padding: 16px 36px;
+    cursor: pointer;
+    gap: 10px;
+    font-weight: 700;
+    font-size: 1rem;
+    border-radius: 9999px;
+    background: linear-gradient(135deg, #30c18e 0%, #06b6d4 100%);
+    color: #07090e;
+    border: none;
+    box-shadow: 0 8px 25px rgba(48, 193, 142, 0.35);
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.locked-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 30px rgba(48, 193, 142, 0.5);
+    filter: brightness(1.1);
+}
+
+/* Modal Overlay */
+.locked-message-modal-container {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    z-index: 1000;
+}
+
+.locked-modal {
+    background: #0b0f17;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 24px;
+    max-width: 400px;
+    width: 90%;
+    padding: 32px;
+    text-align: center;
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.8);
+}
+
+.locked-modal-title {
+    color: #ffffff;
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.locked-modal-message {
+    color: #94a3b8;
+    font-size: 0.95rem;
+    line-height: 1.55;
+    margin-bottom: 24px;
+}
+
+.locked-modal-cancel {
+    padding: 12px 24px;
+    background: rgba(255, 255, 255, 0.05);
+    color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+    width: 100%;
+}
+
+.locked-modal-cancel:hover {
+    background: rgba(255, 255, 255, 0.1);
+}

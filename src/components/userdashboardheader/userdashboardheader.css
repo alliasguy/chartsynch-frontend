@@ -1,0 +1,311 @@
+.userdashboard-sidebar {
+    width: 22%;
+    max-width: 280px;
+    min-width: 240px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    position: sticky;
+    flex-direction: column;
+    top: 0px;
+    left: 0px;
+    min-height: 100vh;
+    background-color: var(--bg-surface-1);
+    border-right: 1px solid var(--border-glass);
+    align-self: flex-start;
+    padding: 20px 14px;
+    z-index: 30;
+}
+
+.dashboard-links-container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+    gap: 6px;
+    padding: 10px 0;
+}
+
+.dashboard-links {
+    text-transform: capitalize;
+    width: 100%;
+    padding: 11px 16px;
+    font-family: var(--font-body);
+    cursor: pointer;
+    border-radius: var(--radius-md);
+    background-color: rgba(255, 255, 255, 0.02);
+    border: 1px solid transparent;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    transition: all 0.25s ease;
+}
+
+.dashboard-links a {
+    color: var(--slate-300);
+    font-size: 0.92rem;
+    font-weight: 500;
+    width: 100%;
+    text-decoration: none;
+}
+
+.dashboard-links:hover {
+    background-color: rgba(48, 193, 142, 0.08);
+    border-color: rgba(48, 193, 142, 0.25);
+    transform: translateX(4px);
+}
+
+.dashboard-links:hover a {
+    color: var(--accent-emerald-bright);
+}
+
+.dashboard-svg-container svg {
+    color: var(--color-variant);
+    font-size: 1.5rem;
+}
+
+.dashboard-logo-container {
+    width: 100%;
+    box-sizing: border-box;
+    height: 100px;
+    cursor: pointer;
+}
+
+.dashboard-logo {
+    width: 100%;
+    object-fit: cover;
+    height: 100%;
+    margin-left: -50px;
+}
+
+.drop-down {
+    position: fixed;
+    right: 16px;
+    top: 70px;
+    padding: 16px;
+    width: 300px;
+    max-width: 90vw;
+    background: rgba(15, 23, 42, 0.95);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.8), 0 0 30px rgba(48, 193, 142, 0.1);
+    z-index: 99999 !important;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+    gap: 12px;
+    overflow-x: hidden;
+}
+
+.dropdown-header {
+    width: 100%;
+    padding: 14px 16px;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-sizing: border-box;
+}
+
+.dropdown-user-details {
+    width: 80%;
+    padding: 0;
+}
+
+.dropdown-email {
+    font-size: 0.78rem;
+    color: #94a3b8;
+    text-align: left;
+    word-break: break-all;
+    margin-top: 2px;
+}
+
+.profile-pic-container {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #30c18e 0%, #06b6d4 100%);
+    color: #07090e;
+    font-weight: 800;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    flex-shrink: 0;
+    overflow: hidden;
+}
+
+.profile-pic-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.dropdown-name {
+    color: #ffffff;
+    font-size: 0.95rem;
+    font-weight: 700;
+    text-align: left;
+    text-transform: capitalize;
+}
+
+.dropdown-deposit-container {
+    width: 100%;
+    padding: 14px 16px;
+    background: rgba(48, 193, 142, 0.08);
+    border: 1px solid rgba(48, 193, 142, 0.25);
+    border-radius: 14px;
+    box-sizing: border-box;
+}
+
+.dropdown-deposit-container h3 {
+    font-size: 0.75rem;
+    text-align: left;
+    color: #94a3b8;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin: 0;
+}
+
+.dropdown-deposit-container h2 {
+    font-size: 1.5rem;
+    margin: 6px 0;
+    text-align: left;
+    font-weight: 800;
+    color: #34d399;
+}
+
+.dropdown-deposit-container p {
+    font-size: 0.8rem;
+    text-transform: capitalize;
+    color: #cbd5e1;
+    text-align: left;
+    margin: 0;
+}
+
+.mobile-tabs {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.dropdown-tabs {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 14px;
+    padding: 10px 14px;
+    border-radius: 12px;
+    cursor: pointer;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid transparent;
+    transition: all 0.2s ease;
+    box-sizing: border-box;
+}
+
+.dropdown-tabs:hover {
+    background: rgba(48, 193, 142, 0.12);
+    border-color: rgba(48, 193, 142, 0.3);
+}
+
+.dropdown-tabs p {
+    width: auto;
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: #e2e8f0;
+    text-transform: capitalize;
+    text-align: left;
+    margin: 0;
+}
+
+.dropdown-tabs svg {
+    margin: 0;
+    font-size: 1.1rem;
+    color: #34d399;
+}
+
+.userdashboard-logo-container {
+    width: 30%;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    justify-content: flex-start;
+    margin-left: 65px;
+}
+
+.userdashboard-logo-container img {
+    object-fit: cover;
+    width: 70%;
+    height: 100%;
+}
+
+.scroll-head {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 4;
+}
+
+@media (max-width: 990px) and (min-width: 768px) {
+    .user-header-nav {
+        display: none;
+    }
+
+    .mobile-tabs {
+        width: 100%;
+        display: block;
+    }
+
+    .userdashboard-sidebar {
+        display: none;
+        overflow: hidden;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .m-drop-container {
+        width: 100%;
+        position: fixed;
+        top: 0;
+        right: 0;
+        z-index: 10 !important;
+    }
+
+    .userdashboard-sidebar {
+        display: none;
+        overflow: hidden;
+    }
+
+    .mobile-tabs {
+        width: 100%;
+        display: block;
+    }
+
+    .drop-down {
+        width: 90%;
+        overflow: auto;
+        height: 100vh;
+        position: absolute;
+        top: 0;
+        right: 0;
+        z-index: 20;
+    }
+
+    .userdashboard-logo-container {
+        display: none !important;
+    }
+
+    .dropdown-tabs {
+        z-index: 10;
+    }
+}

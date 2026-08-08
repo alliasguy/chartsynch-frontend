@@ -1,0 +1,201 @@
+/* mt5section.css - Executive FinTech Theme */
+
+.mt5-section {
+    width: 100%;
+    padding: 80px 0 120px;
+    background: var(--bg-deep, #07090e);
+    position: relative;
+    overflow: hidden;
+}
+
+.mt5-section::before {
+    content: '';
+    position: absolute;
+    top: -20%;
+    right: -10%;
+    width: 700px;
+    height: 700px;
+    background: radial-gradient(circle, rgba(6, 182, 212, 0.12) 0%, rgba(48, 193, 142, 0.05) 50%, transparent 70%);
+    filter: blur(120px);
+    pointer-events: none;
+}
+
+.mt5-container {
+    width: 90%;
+    max-width: 1240px;
+    margin: 0 auto;
+}
+
+.mt5-content-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+}
+
+.mt5-content {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    z-index: 2;
+}
+
+.platform-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 16px;
+    background: rgba(6, 182, 212, 0.08);
+    color: #38bdf8;
+    border-radius: 9999px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    width: fit-content;
+    border: 1px solid rgba(6, 182, 212, 0.25);
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+.mt5-content h1 {
+    font-size: 3.25rem;
+    font-weight: 800;
+    color: white;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    margin: 0;
+}
+
+.gradient-text {
+    background: linear-gradient(135deg, #30c18e 0%, #06b6d4 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.mt5-content p {
+    font-size: 1.1rem;
+    color: #94a3b8;
+    line-height: 1.65;
+    max-width: 520px;
+    margin: 0;
+}
+
+.feature-list {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    margin-top: 8px;
+    margin-bottom: 16px;
+}
+
+.feature-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: #cbd5e1;
+    font-weight: 500;
+    font-size: 1rem;
+}
+
+.feature-dot {
+    width: 8px;
+    height: 8px;
+    background: #06b6d4;
+    border-radius: 50%;
+    box-shadow: 0 0 10px #06b6d4;
+}
+
+.primary-btn {
+    padding: 16px 36px;
+    background: linear-gradient(135deg, #30c18e 0%, #06b6d4 100%);
+    color: #07090e;
+    border: none;
+    border-radius: 9999px;
+    font-weight: 700;
+    font-size: 1.02rem;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    width: fit-content;
+    box-shadow: 0 8px 25px rgba(48, 193, 142, 0.35);
+}
+
+.primary-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 35px rgba(48, 193, 142, 0.5);
+    filter: brightness(1.1);
+}
+
+.mt5-visuals {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.visual-backdrop {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(6, 182, 212, 0.15) 0%, transparent 60%);
+    z-index: 1;
+    filter: blur(40px);
+}
+
+.platform-mockup {
+    width: 100%;
+    max-width: 580px;
+    position: relative;
+    z-index: 2;
+    border-radius: 24px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    box-shadow: 0 30px 70px rgba(0, 0, 0, 0.7);
+    transition: transform 0.5s ease;
+}
+
+.platform-mockup:hover {
+    transform: translateY(-6px) scale(1.02);
+}
+
+.floating-badge {
+    position: absolute;
+    padding: 14px 24px;
+    background: rgba(17, 23, 35, 0.85);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(48, 193, 142, 0.3);
+    border-radius: 16px;
+    color: white;
+    font-weight: 700;
+    font-size: 0.92rem;
+    z-index: 3;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6), 0 0 20px rgba(48, 193, 142, 0.15);
+    animation: floatBadge 6s ease-in-out infinite;
+}
+
+.badge-1 {
+    top: 5%;
+    left: -10px;
+    animation-delay: 0s;
+}
+
+.badge-2 {
+    bottom: 15%;
+    right: -10px;
+    animation-delay: 3s;
+}
+
+@keyframes floatBadge {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+@media (max-width: 990px) {
+    .mt5-section { padding: 80px 0; }
+    .mt5-content-wrapper { grid-template-columns: 1fr; gap: 60px; text-align: center; }
+    .mt5-content { align-items: center; }
+    .feature-list { align-items: center; }
+    .platform-mockup { width: 100%; }
+    .floating-badge { display: none; }
+}

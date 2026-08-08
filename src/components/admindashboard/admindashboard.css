@@ -1,0 +1,1825 @@
+/* =====================================================
+   CHARTSYNCH ADMIN — PREMIUM DARK NEON THEME
+   All sidebar/shared classes scoped under .admin-dash
+   to prevent global conflicts with user dashboard CSS.
+   ===================================================== */
+
+:root {
+  --adm-bg:       #0c0c10;
+  --adm-surface:  #111117;
+  --adm-elevated: #18181f;
+  --adm-glass:    rgba(255,255,255,0.03);
+  --adm-border:   rgba(255,255,255,0.07);
+  --adm-accent-b: rgba(48,193,142,0.28);
+  --adm-accent:   #30c18e;
+  --adm-soft:     rgba(48,193,142,0.1);
+  --adm-glow:     0 0 24px rgba(48,193,142,0.2);
+  --adm-t1:       #f0f0f8;
+  --adm-t2:       #8888a8;
+  --adm-t3:       #50506a;
+  --adm-danger:   #ff4d6a;
+  --adm-dsoft:    rgba(255,77,106,0.1);
+  --adm-warn:     #f59e0b;
+  --adm-sw:       248px;
+  --adm-r:        14px;
+  --adm-rs:       9px;
+  --adm-t:        0.18s ease;
+}
+
+/* =====================================================
+   ROOT SHELL
+   ===================================================== */
+
+.admin-dash {
+  min-height: 100vh;
+  width: 100%;
+  background: var(--adm-bg);
+  font-family: 'Inter', 'Poppins', system-ui, sans-serif;
+  color: var(--adm-t1);
+}
+
+/* =====================================================
+   LOGIN
+   ===================================================== */
+
+.admin-dash .login-wrapper {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--adm-bg);
+  background-image:
+    radial-gradient(ellipse 700px 500px at 50% -10%, rgba(48,193,142,0.07) 0%, transparent 70%),
+    radial-gradient(ellipse 400px 400px at 80% 100%, rgba(48,193,142,0.04) 0%, transparent 60%);
+  padding: 20px;
+}
+
+.admin-dash .form {
+  background: var(--adm-surface);
+  border: 1px solid var(--adm-border);
+  border-radius: 20px;
+  padding: 44px 40px;
+  width: 420px;
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+  box-shadow:
+    0 0 0 1px rgba(255,255,255,0.03),
+    0 40px 80px rgba(0,0,0,0.5);
+}
+
+.admin-dash .login-logo {
+  height: 44px;
+  object-fit: contain;
+  margin-bottom: 20px;
+  filter: brightness(1.15);
+}
+
+.admin-dash .title_container {
+  text-align: center;
+  width: 100%;
+  margin-bottom: 4px;
+}
+
+.admin-dash .titles {
+  font-size: 1.45rem;
+  font-weight: 700;
+  color: var(--adm-t1);
+  letter-spacing: -0.4px;
+  margin: 0 0 8px;
+  display: block;
+}
+
+.admin-dash .subtitle {
+  font-size: 0.8rem;
+  color: var(--adm-t2);
+  line-height: 1.6;
+  display: block;
+}
+
+.admin-dash .input_containers {
+  width: 100%;
+  position: relative;
+  margin-top: 18px;
+}
+
+.admin-dash .input_labels {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--adm-t2);
+  margin-bottom: 7px;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+}
+
+.admin-dash .icont { display: none; }
+
+.admin-dash .input_field {
+  width: 100%;
+  height: 48px;
+  padding: 0 16px;
+  background: var(--adm-elevated);
+  border: 1px solid var(--adm-border) !important;
+  border-radius: var(--adm-rs);
+  color: var(--adm-t1);
+  font-size: 0.9rem;
+  outline: none;
+  transition: border-color var(--adm-t), box-shadow var(--adm-t);
+}
+
+.admin-dash .input_field::placeholder { color: var(--adm-t3); }
+
+.admin-dash .input_field:focus {
+  border-color: var(--adm-accent-b) !important;
+  box-shadow: 0 0 0 3px rgba(48,193,142,0.08);
+}
+
+.admin-dash .eye-container {
+  position: absolute;
+  right: 14px;
+  bottom: 14px;
+  cursor: pointer;
+  color: var(--adm-t3);
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  transition: color var(--adm-t);
+}
+
+.admin-dash .eye-container:hover { color: var(--adm-accent); }
+
+.admin-dash .form > button[type="submit"] {
+  width: 100%;
+  height: 50px;
+  margin-top: 24px;
+  border-radius: var(--adm-rs);
+  border: none !important;
+  background: var(--adm-accent);
+  color: #0a0a0e;
+  font-size: 0.875rem;
+  font-weight: 700;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: opacity var(--adm-t), box-shadow var(--adm-t);
+  box-shadow: 0 0 24px rgba(48,193,142,0.28);
+}
+
+.admin-dash .form > button[type="submit"]:hover {
+  opacity: 0.92;
+  box-shadow: 0 0 36px rgba(48,193,142,0.42);
+}
+
+/* =====================================================
+   DASHBOARD SHELL
+   ===================================================== */
+
+.admin-dash .dashboard-wrapper {
+  min-height: 100vh;
+  display: flex;
+  background: var(--adm-bg);
+  position: relative;
+}
+
+.admin-dash .homewrapper {
+  display: flex;
+  width: 100%;
+  min-height: 100vh;
+}
+
+/* =====================================================
+   SIDEBAR  — scoped to prevent conflict with
+   userdashboardheader.css shared class names
+   ===================================================== */
+
+.admin-dash .userdashboard-sidebar {
+  position: fixed !important;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: var(--adm-sw) !important;
+  background: var(--adm-surface) !important;
+  border-right: 1px solid var(--adm-border) !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
+  justify-content: flex-start !important;
+  padding: 28px 0 24px !important;
+  z-index: 100;
+  overflow-y: auto;
+  height: 100vh !important;
+}
+
+.admin-dash .userdashboard-sidebar::-webkit-scrollbar { width: 0; }
+
+.admin-dash .dashboard-logo-container {
+  width: 100% !important;
+  height: auto !important;
+  padding: 0 24px 28px !important;
+  border-bottom: 1px solid var(--adm-border);
+  margin-bottom: 16px;
+  cursor: default;
+  box-sizing: border-box;
+}
+
+.admin-dash .dashboard-logo {
+  height: 34px !important;
+  width: auto !important;
+  object-fit: contain !important;
+  filter: brightness(1.1);
+  margin-left: 0 !important;
+}
+
+.admin-dash .dashboard-links-container {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
+  justify-content: flex-start !important;
+  gap: 2px;
+  padding: 0 12px !important;
+  list-style: none;
+  flex: 1;
+  width: 100% !important;
+  overflow: visible !important;
+}
+
+.admin-dash .dashboard-links {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  gap: 12px;
+  width: 100% !important;
+  padding: 11px 16px !important;
+  border-radius: var(--adm-rs) !important;
+  cursor: pointer;
+  color: var(--adm-t2) !important;
+  background-color: transparent !important;
+  transition: background var(--adm-t), color var(--adm-t);
+  font-size: 0.85rem;
+  font-weight: 500;
+  list-style: none;
+  text-decoration: none;
+  margin: 0 !important;
+  text-transform: capitalize;
+}
+
+.admin-dash .dashboard-links:hover {
+  background: var(--adm-soft) !important;
+  background-color: var(--adm-soft) !important;
+  color: var(--adm-accent) !important;
+}
+
+.admin-dash .dashboard-links p {
+  width: auto !important;
+  text-align: left;
+  color: inherit;
+  font-size: 0.85rem;
+}
+
+.admin-dash .dashboard-links a {
+  color: inherit !important;
+  text-decoration: none;
+  width: auto !important;
+  font-size: 0.85rem;
+}
+
+.admin-dash .dashboard-links:hover a {
+  color: var(--adm-accent) !important;
+}
+
+.admin-dash .dashboard-svg-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  background: var(--adm-elevated);
+  border-radius: 8px;
+  font-size: 0.95rem;
+  transition: background var(--adm-t), color var(--adm-t);
+  flex-shrink: 0;
+}
+
+.admin-dash .dashboard-svg-container svg {
+  color: inherit !important;
+  font-size: 1rem !important;
+}
+
+.admin-dash .dashboard-links:hover .dashboard-svg-container {
+  background: rgba(48,193,142,0.15);
+  color: var(--adm-accent);
+}
+
+/* =====================================================
+   MAIN CONTENT AREA
+   ===================================================== */
+
+.admin-dash .dashboardhomepage {
+  flex: 1;
+  min-width: 0;
+  margin-left: var(--adm-sw);
+  min-height: 100vh;
+  background: var(--adm-bg);
+}
+
+/* =====================================================
+   TOP HEADER BAR
+   ===================================================== */
+
+.admin-dash .dashboardheaderwrapper {
+  display: flex !important;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+  padding: 14px 28px;
+  background: var(--adm-surface);
+  border-bottom: 1px solid var(--adm-border);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  width: 100%;
+}
+
+/* Neutralise the inner duplicated wrapper */
+.admin-dash .dashboardheaderwrapper .dashboardheaderwrapper {
+  all: unset;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.admin-dash .header-notification-icon-container {
+  width: 38px;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--adm-elevated);
+  border: 1px solid var(--adm-border) !important;
+  border-radius: var(--adm-rs);
+  cursor: pointer;
+  color: var(--adm-t2);
+  font-size: 1.05rem;
+  transition: color var(--adm-t), border-color var(--adm-t);
+}
+
+.admin-dash .header-notification-icon-container:hover {
+  color: var(--adm-accent);
+  border-color: var(--adm-accent-b) !important;
+}
+
+.admin-dash .header-username-container h3 {
+  font-size: 0.825rem;
+  font-weight: 600;
+  color: var(--adm-t2);
+}
+
+.admin-dash .header-userprofile-container {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+}
+
+.admin-dash .user-p-icon-container {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--adm-accent);
+  border-radius: 50%;
+  color: #0a0a0e;
+  font-size: 0.85rem;
+}
+
+.admin-dash .user-p-drop-icon {
+  color: var(--adm-t3);
+  font-size: 0.8rem;
+  transition: color var(--adm-t);
+}
+
+.admin-dash .user-p-drop-icon:hover { color: var(--adm-t1); }
+
+/* =====================================================
+   STATS ROW
+   ===================================================== */
+
+.admin-stats-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  padding: 28px 28px 28px;
+}
+
+.admin-stat-card {
+  background: var(--adm-surface);
+  border: 1px solid var(--adm-border) !important;
+  border-radius: var(--adm-r);
+  padding: 20px 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  transition: border-color var(--adm-t);
+  position: relative;
+  overflow: hidden;
+}
+
+.admin-stat-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--adm-accent), transparent);
+  opacity: 0;
+  transition: opacity var(--adm-t);
+}
+
+.admin-stat-card:hover { border-color: var(--adm-accent-b) !important; }
+.admin-stat-card:hover::before { opacity: 1; }
+
+.stat-label {
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: var(--adm-t3);
+  text-transform: uppercase;
+  letter-spacing: 0.9px;
+}
+
+.stat-value {
+  font-size: 1.65rem;
+  font-weight: 800;
+  color: var(--adm-t1);
+  letter-spacing: -1px;
+  font-variant-numeric: tabular-nums;
+  line-height: 1;
+}
+
+.stat-value.accent { color: var(--adm-accent); }
+.stat-value.warning { color: var(--adm-warn); }
+
+/* =====================================================
+   PAGE HEADER
+   ===================================================== */
+
+.admin-page-header {
+  padding: 28px 28px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+}
+
+.admin-page-header h3 {
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: var(--adm-accent);
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+}
+
+.admin-page-header h2 {
+  font-size: 1.55rem;
+  font-weight: 800;
+  color: var(--adm-t1);
+  letter-spacing: -0.6px;
+}
+
+.admin-page-header p {
+  font-size: 0.82rem;
+  color: var(--adm-t2);
+}
+
+/* =====================================================
+   USERS TABLE
+   ===================================================== */
+
+.transaction-container.dash-b,
+.transaction-container.no-ref.dash-b {
+  padding: 0 28px 32px;
+  background: transparent;
+}
+
+.dashboard-table-container {
+  background: var(--adm-surface);
+  border: 1px solid var(--adm-border) !important;
+  border-radius: var(--adm-r);
+  overflow: hidden;
+  overflow-x: auto;
+  box-shadow: none !important;
+}
+
+.fintech-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.825rem;
+}
+
+.fintech-table thead {
+  background: var(--adm-elevated);
+  border-bottom: 1px solid var(--adm-border);
+}
+
+.fintech-table thead th {
+  padding: 14px 20px;
+  text-align: left;
+  font-size: 0.67rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: var(--adm-t3);
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.fintech-table thead th.text-right { text-align: right; }
+
+.fintech-table tbody tr {
+  border-bottom: 1px solid var(--adm-border);
+  transition: background var(--adm-t);
+}
+
+.fintech-table tbody tr:last-child { border-bottom: none; }
+.fintech-table tbody tr:hover { background: rgba(48,193,142,0.03); }
+
+.fintech-table tbody td {
+  padding: 14px 20px;
+  vertical-align: middle;
+  color: var(--adm-t1);
+}
+
+.fintech-table tbody td.text-right { text-align: right; }
+
+.admin-dash .user-cell {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.admin-dash .user-name {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--adm-t1);
+  width: auto !important;
+}
+
+.admin-dash .user-email {
+  font-size: 0.77rem;
+  color: var(--adm-t2);
+  width: auto !important;
+}
+
+.mono-font {
+  font-family: 'JetBrains Mono', 'Fira Code', 'Courier New', monospace;
+  font-size: 0.82rem;
+  font-weight: 600;
+}
+
+/* ── Status Badges ────────────────────────────────── */
+
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 4px 10px;
+  border-radius: 100px;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.status-badge::before {
+  content: '';
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: currentColor;
+  flex-shrink: 0;
+}
+
+.status-approved, .status-verified {
+  background: rgba(48,193,142,0.12);
+  color: #30c18e;
+  border: 1px solid rgba(48,193,142,0.2) !important;
+}
+
+.status-pending, .status-processing {
+  background: rgba(245,158,11,0.1);
+  color: #f59e0b;
+  border: 1px solid rgba(245,158,11,0.2) !important;
+}
+
+.status-not-submitted {
+  background: rgba(148,163,184,0.12);
+  color: #94a3b8;
+  border: 1px solid rgba(148,163,184,0.2) !important;
+}
+
+.status-rejected {
+  background: var(--adm-dsoft);
+  color: var(--adm-danger);
+  border: 1px solid rgba(255,77,106,0.2) !important;
+}
+
+/* ── Action Menu ──────────────────────────────────── */
+
+.actions-cell { position: relative; }
+
+.action-menu-btn {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--adm-elevated);
+  border: 1px solid var(--adm-border) !important;
+  border-radius: var(--adm-rs);
+  cursor: pointer;
+  color: var(--adm-t2);
+  transition: all var(--adm-t);
+  margin-left: auto;
+}
+
+.action-menu-btn:hover {
+  background: var(--adm-soft);
+  color: var(--adm-accent);
+  border-color: var(--adm-accent-b) !important;
+}
+
+.action-dropdown {
+  position: fixed;
+  background: var(--adm-elevated);
+  border: 1px solid var(--adm-border) !important;
+  border-radius: var(--adm-r);
+  padding: 6px;
+  min-width: 188px;
+  max-height: min(420px, calc(100vh - 24px));
+  overflow-y: auto;
+  z-index: 1000;
+  box-shadow:
+    0 20px 60px rgba(0,0,0,0.55),
+    0 0 0 1px rgba(255,255,255,0.03);
+}
+
+.action-item {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 9px 13px;
+  border: none !important;
+  background: none;
+  border-radius: 7px;
+  color: var(--adm-t1);
+  font-size: 0.8rem;
+  font-weight: 500;
+  cursor: pointer;
+  text-align: left;
+  text-decoration: none;
+  transition: background var(--adm-t), color var(--adm-t);
+  white-space: nowrap;
+}
+
+.action-item:hover {
+  background: var(--adm-glass);
+  color: var(--adm-accent);
+}
+
+.action-item.danger { color: var(--adm-danger); }
+
+.action-item.danger:hover {
+  background: var(--adm-dsoft);
+  color: var(--adm-danger);
+}
+
+/* =====================================================
+   MODALS
+   ===================================================== */
+
+.modal-container {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.78);
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 20px;
+}
+
+.modal {
+  background: var(--adm-surface);
+  border: 1px solid var(--adm-border) !important;
+  border-radius: var(--adm-r);
+  padding: 32px;
+  width: 100%;
+  max-width: 500px;
+  position: relative;
+  box-shadow: 0 30px 80px rgba(0,0,0,0.65);
+}
+
+.modal-header {
+  margin-bottom: 24px;
+  padding-right: 36px;
+}
+
+.modal-header h2 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--adm-t1);
+  text-transform: capitalize;
+}
+
+.close-modal-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--adm-elevated);
+  border-radius: var(--adm-rs);
+  cursor: pointer;
+  color: var(--adm-t2);
+  font-size: 1.05rem;
+  transition: color var(--adm-t), background var(--adm-t);
+}
+
+.close-modal-btn:hover {
+  background: var(--adm-dsoft);
+  color: var(--adm-danger);
+}
+
+.modal-input-container {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.modal-input {
+  display: flex;
+  align-items: center;
+  background: var(--adm-elevated);
+  border: 1px solid var(--adm-border) !important;
+  border-radius: var(--adm-rs);
+  overflow: hidden;
+  transition: border-color var(--adm-t), box-shadow var(--adm-t);
+}
+
+.modal-input:focus-within {
+  border-color: var(--adm-accent-b) !important;
+  box-shadow: 0 0 0 3px rgba(48,193,142,0.07);
+}
+
+.modal-input input,
+.modal-input select {
+  flex: 1;
+  height: 48px;
+  padding: 0 16px;
+  background: none;
+  border: none !important;
+  color: var(--adm-t1);
+  font-size: 0.9rem;
+  outline: none;
+}
+
+.modal-input input::placeholder { color: var(--adm-t3); }
+.modal-input select { cursor: pointer; }
+.modal-input select option { background: var(--adm-elevated); color: var(--adm-t1); }
+
+.modal-input span {
+  padding: 0 16px;
+  color: var(--adm-accent);
+  font-size: 0.78rem;
+  font-weight: 700;
+  border-left: 1px solid var(--adm-border) !important;
+  white-space: nowrap;
+}
+
+.custom-select {
+  width: 100%;
+  height: 50px;
+  padding: 0 16px;
+  background: var(--adm-elevated);
+  border: 1px solid var(--adm-border) !important;
+  border-radius: var(--adm-rs);
+  color: var(--adm-t1);
+  font-size: 0.875rem;
+  outline: none;
+  cursor: pointer;
+  transition: border-color var(--adm-t);
+}
+
+.custom-select:focus { border-color: var(--adm-accent-b) !important; }
+.custom-select option,
+.custom-select optgroup { background: #1c1c26; color: var(--adm-t1); }
+
+.modal-btn-container {
+  display: flex;
+  gap: 10px;
+  margin-top: 22px;
+}
+
+/* ── Modal buttons ────────────────────────────────── */
+
+button.noselect {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  height: 44px;
+  padding: 0 18px;
+  background: var(--adm-elevated);
+  border: 1px solid var(--adm-border) !important;
+  border-radius: var(--adm-rs);
+  color: var(--adm-t2);
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--adm-t);
+}
+
+button.noselect:hover {
+  border-color: var(--adm-danger) !important;
+  color: var(--adm-danger);
+  background: var(--adm-dsoft);
+}
+
+button.noselect .icon { display: flex; align-items: center; }
+button.noselect .icon svg { width: 13px; height: 13px; }
+
+button.next {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  height: 44px;
+  padding: 0 22px;
+  background: var(--adm-accent);
+  border: none !important;
+  border-radius: var(--adm-rs);
+  color: #0a0a0e;
+  font-size: 0.82rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: opacity var(--adm-t), box-shadow var(--adm-t);
+  box-shadow: 0 0 18px rgba(48,193,142,0.22);
+}
+
+button.next:hover {
+  opacity: 0.9;
+  box-shadow: 0 0 28px rgba(48,193,142,0.4);
+}
+
+button.next .icon { display: flex; align-items: center; }
+button.next .icon svg { width: 15px; height: 15px; fill: #0a0a0e; }
+
+/* ── Delete Confirm ───────────────────────────────── */
+
+.deactivate-card {
+  background: var(--adm-surface);
+  border: 1px solid rgba(255,77,106,0.2) !important;
+  border-radius: var(--adm-r);
+  padding: 36px 32px;
+  max-width: 440px;
+  width: 100%;
+  box-shadow: 0 30px 80px rgba(0,0,0,0.65);
+}
+
+.deactivate-card .headers {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  text-align: center;
+}
+
+.deactivate-card .image {
+  width: 56px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--adm-dsoft);
+  border: 1px solid rgba(255,77,106,0.2) !important;
+  border-radius: 50%;
+}
+
+.deactivate-card .image svg {
+  width: 26px;
+  height: 26px;
+  stroke: var(--adm-danger);
+  fill: none;
+}
+
+.deactivate-card .content { display: flex; flex-direction: column; gap: 8px; }
+
+.deactivate-card .title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--adm-t1);
+}
+
+.deactivate-card .message {
+  font-size: 0.825rem;
+  color: var(--adm-t2);
+  line-height: 1.65;
+}
+
+.deactivate-card .actions {
+  display: flex;
+  gap: 10px;
+  width: 100%;
+}
+
+.deactivate-card .desactivate {
+  flex: 1;
+  height: 44px;
+  background: var(--adm-danger);
+  border: none !important;
+  border-radius: var(--adm-rs);
+  color: #fff;
+  font-size: 0.82rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: opacity var(--adm-t);
+}
+
+.deactivate-card .desactivate:hover { opacity: 0.85; }
+
+.deactivate-card .cancel {
+  flex: 1;
+  height: 44px;
+  background: var(--adm-elevated);
+  border: 1px solid var(--adm-border) !important;
+  border-radius: var(--adm-rs);
+  color: var(--adm-t2);
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--adm-t);
+}
+
+.deactivate-card .cancel:hover {
+  border-color: var(--adm-t2) !important;
+  color: var(--adm-t1);
+}
+
+/* =====================================================
+   CREATE TRADER
+   ===================================================== */
+
+.create-trader-section { padding: 28px; }
+
+.create-trader-form {
+  background: var(--adm-surface);
+  border: 1px solid var(--adm-border) !important;
+  border-radius: var(--adm-r);
+  padding: 40px 36px;
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.profile-picture-upload-container {
+  display: flex;
+  align-items: flex-end;
+  margin: 0 auto 8px;
+  position: relative;
+}
+
+.profile-circle {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  background: var(--adm-elevated);
+  border: 2px solid var(--adm-border) !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  color: var(--adm-t3);
+  font-size: 1.6rem;
+}
+
+.profile-circle-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.upload-icon {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--adm-accent);
+  border-radius: 50%;
+  color: #0a0a0e;
+  font-size: 0.85rem;
+  cursor: pointer;
+  border: 2px solid var(--adm-bg) !important;
+  transition: opacity var(--adm-t);
+}
+
+.upload-icon:hover { opacity: 0.85; }
+.proof-input { display: none; }
+.inputForm { width: 100%; }
+
+.create-trader-input {
+  width: 100%;
+  height: 48px;
+  padding: 0 16px;
+  background: var(--adm-elevated);
+  border: 1px solid var(--adm-border) !important;
+  border-radius: var(--adm-rs);
+  color: var(--adm-t1);
+  font-size: 0.875rem;
+  outline: none;
+  transition: border-color var(--adm-t), box-shadow var(--adm-t);
+}
+
+.create-trader-input::placeholder { color: var(--adm-t3); }
+
+.create-trader-input:focus {
+  border-color: var(--adm-accent-b) !important;
+  box-shadow: 0 0 0 3px rgba(48,193,142,0.07);
+}
+
+.submit-btn {
+  width: 100%;
+  height: 50px;
+  background: var(--adm-accent);
+  border: none !important;
+  border-radius: var(--adm-rs);
+  color: #0a0a0e;
+  font-size: 0.875rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  transition: opacity var(--adm-t), box-shadow var(--adm-t);
+  box-shadow: 0 0 20px rgba(48,193,142,0.22);
+  margin-top: 6px;
+}
+
+.submit-btn:hover {
+  opacity: 0.9;
+  box-shadow: 0 0 34px rgba(48,193,142,0.42);
+}
+
+/* =====================================================
+   TRADER LOGS
+   ===================================================== */
+
+.traders-log-section {
+  padding: 28px;
+  width: 100%;
+  min-width: 0;
+}
+
+.active-trader-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 20px;
+  align-items: start;
+  width: 100%;
+  min-width: 0;
+}
+
+.videoframe-text-container.treader-header {
+  grid-column: 1 / -1;
+}
+
+.videoframe-text-container.treader-header h1 {
+  font-size: 1.45rem;
+  font-weight: 800;
+  color: var(--adm-t1);
+  letter-spacing: -0.5px;
+}
+
+.videoframe-text-container.treader-header .highlight {
+  color: var(--adm-accent);
+}
+
+.traders-card.admin-trader-card {
+  background: var(--adm-surface);
+  border: 1px solid var(--adm-border) !important;
+  border-radius: var(--adm-r);
+  padding: 24px;
+  position: relative;
+  transition: border-color var(--adm-t), box-shadow var(--adm-t);
+}
+
+.traders-card.admin-trader-card:hover {
+  border-color: var(--adm-accent-b) !important;
+  box-shadow: 0 0 24px rgba(48,193,142,0.05);
+}
+
+.admin-trader-card-delete-btn-container {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--adm-dsoft);
+  border: 1px solid rgba(255,77,106,0.15) !important;
+  border-radius: var(--adm-rs);
+  cursor: pointer;
+  color: var(--adm-danger);
+  font-size: 1.1rem;
+  transition: background var(--adm-t);
+}
+
+.admin-trader-card-delete-btn-container:hover {
+  background: rgba(255,77,106,0.2);
+}
+
+.trader-card-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 20px;
+  padding-right: 40px;
+}
+
+.trader-card-image-container {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  overflow: hidden;
+  background: var(--adm-elevated);
+  border: 2px solid var(--adm-accent-b) !important;
+  flex-shrink: 0;
+}
+
+.trader-card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.trader-card-text-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.trader-name {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--adm-t1);
+}
+
+.trader-description {
+  font-size: 0.8rem;
+  color: var(--adm-t2);
+}
+
+.trader-performance {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.trader-performance-item {
+  background: var(--adm-elevated);
+  border: 1px solid var(--adm-border) !important;
+  border-radius: var(--adm-rs);
+  padding: 12px;
+}
+
+.performance-label {
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: var(--adm-t3);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 4px;
+  display: block;
+}
+
+.performance-value {
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--adm-accent);
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.trader-performance-btn-container {
+  grid-column: 1 / -1;
+}
+
+.trader-card-btn {
+  width: 100%;
+  height: 42px;
+  background: var(--adm-soft);
+  border: 1px solid var(--adm-accent-b) !important;
+  border-radius: var(--adm-rs);
+  color: var(--adm-accent);
+  font-size: 0.825rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background var(--adm-t), box-shadow var(--adm-t);
+}
+
+.trader-card-btn:hover {
+  background: rgba(48,193,142,0.18);
+  box-shadow: 0 0 18px rgba(48,193,142,0.15);
+}
+
+/* =====================================================
+   COPY TRADERS (in modal)
+   ===================================================== */
+
+.copy-traders-section { margin-top: 14px; }
+
+.copy-traders-section h4 {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--adm-t2);
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+}
+
+.no-traders-msg { font-size: 0.825rem; color: var(--adm-t3); }
+
+.copy-traders-list-container {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  max-height: 280px;
+  overflow-y: auto;
+  padding-right: 2px;
+}
+
+.copy-traders-list-container::-webkit-scrollbar { width: 3px; }
+.copy-traders-list-container::-webkit-scrollbar-track { background: transparent; }
+.copy-traders-list-container::-webkit-scrollbar-thumb {
+  background: var(--adm-accent-b);
+  border-radius: 4px;
+}
+
+.copy-trader-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  background: var(--adm-elevated);
+  border: 1px solid var(--adm-border) !important;
+  border-radius: var(--adm-rs);
+  padding: 10px 14px;
+}
+
+.ct-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+  flex: 1;
+}
+
+.ct-name {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--adm-t1);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.ct-email {
+  font-size: 0.7rem;
+  color: var(--adm-t3);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.ct-balance {
+  font-size: 0.7rem;
+  color: var(--adm-accent);
+  font-weight: 700;
+}
+
+.ct-inputs {
+  display: flex;
+  gap: 6px;
+  flex-shrink: 0;
+}
+
+.ct-amount-input,
+.ct-type-select {
+  height: 34px;
+  background: var(--adm-surface);
+  border: 1px solid var(--adm-border) !important;
+  border-radius: 7px;
+  color: var(--adm-t1);
+  font-size: 0.78rem;
+  padding: 0 8px;
+  outline: none;
+  transition: border-color var(--adm-t);
+}
+
+.ct-amount-input { width: 76px; }
+.ct-type-select { width: 78px; cursor: pointer; }
+
+.ct-amount-input:focus,
+.ct-type-select:focus { border-color: var(--adm-accent-b) !important; }
+
+.ct-amount-input::placeholder { color: var(--adm-t3); }
+.ct-type-select option { background: var(--adm-elevated); }
+
+/* =====================================================
+   DROPDOWN MENU — scoped to avoid conflict with
+   userdashboardheader.css .drop-down (white bg)
+   ===================================================== */
+
+.admin-dash .drop-down {
+  position: fixed !important;
+  top: 0;
+  right: 0;
+  width: 260px;
+  background: var(--adm-surface) !important;
+  background-color: var(--adm-surface) !important;
+  border-left: 1px solid var(--adm-border);
+  border-bottom: 1px solid var(--adm-border);
+  border-radius: 0 0 0 var(--adm-r);
+  padding: 10px;
+  z-index: 500;
+  box-shadow: -8px 8px 40px rgba(0,0,0,0.5);
+}
+
+.admin-dash .dropdown-tabs {
+  display: flex !important;
+  align-items: center;
+  gap: 12px;
+  padding: 11px 14px;
+  border-radius: var(--adm-rs);
+  cursor: pointer;
+  color: var(--adm-t2) !important;
+  background-color: transparent !important;
+  font-size: 0.85rem;
+  font-weight: 500;
+  transition: background var(--adm-t), color var(--adm-t);
+}
+
+.admin-dash .dropdown-tabs:hover {
+  background: var(--adm-soft) !important;
+  background-color: var(--adm-soft) !important;
+  color: var(--adm-accent) !important;
+}
+
+.admin-dash .dropdown-tabs p {
+  text-transform: capitalize;
+  color: inherit;
+}
+
+
+/* =====================================================
+   EMPTY STATE
+   ===================================================== */
+
+.page-swiper-wrapper { padding: 40px 28px; }
+
+.failure-page.no-referral-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  padding: 60px 20px;
+  background: var(--adm-surface);
+  border: 1px dashed var(--adm-border) !important;
+  border-radius: var(--adm-r);
+  text-align: center;
+}
+
+.failure-img { width: 110px; opacity: 0.55; }
+
+.failure-page.no-referral-page p {
+  color: var(--adm-t2);
+  font-size: 0.875rem;
+}
+
+.failure-page.no-referral-page a {
+  color: var(--adm-accent);
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+/* =====================================================
+   USER DETAILS MODAL
+   ===================================================== */
+
+.user-details-content .detail-row {
+  display: flex !important;
+  justify-content: space-between;
+  align-items: center;
+  padding: 13px 0 !important;
+  border-bottom: 1px solid var(--adm-border) !important;
+}
+
+.user-details-content .detail-row:last-child {
+  border-bottom: none !important;
+}
+
+.user-details-content .detail-row > span:first-child {
+  color: var(--adm-t2) !important;
+  font-size: 0.825rem;
+  font-weight: 500;
+}
+
+.user-details-content .detail-row > span:last-child {
+  color: var(--adm-t1) !important;
+  font-weight: 600;
+  font-size: 0.85rem;
+}
+
+/* =====================================================
+   CREATE TRADER — REFORMED
+   ===================================================== */
+
+.cts-header {
+  margin-bottom: 28px;
+}
+
+.cts-tag {
+  display: inline-block;
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: var(--adm-accent);
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  margin-bottom: 8px;
+}
+
+.cts-title {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--adm-t1);
+  letter-spacing: -0.5px;
+  margin-bottom: 6px;
+}
+
+.cts-sub {
+  font-size: 0.82rem;
+  color: var(--adm-t2);
+}
+
+/* Upload zone */
+.cts-upload-zone {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  padding: 24px;
+  background: var(--adm-elevated);
+  border: 1px dashed var(--adm-accent-b) !important;
+  border-radius: var(--adm-r);
+  margin-bottom: 4px;
+}
+
+.cts-avatar-ring {
+  width: 88px;
+  height: 88px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, rgba(48,193,142,0.15), rgba(48,193,142,0.04));
+  border: 2px solid var(--adm-accent-b) !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.cts-avatar-placeholder {
+  color: var(--adm-t3);
+  font-size: 1.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cts-avatar-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.cts-upload-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.cts-upload-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  height: 38px;
+  padding: 0 16px;
+  background: var(--adm-soft);
+  border: 1px solid var(--adm-accent-b) !important;
+  border-radius: var(--adm-rs);
+  color: var(--adm-accent);
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+  width: fit-content;
+  transition: background var(--adm-t), box-shadow var(--adm-t);
+}
+
+.cts-upload-btn:hover {
+  background: rgba(48,193,142,0.18);
+  box-shadow: 0 0 16px rgba(48,193,142,0.15);
+}
+
+.cts-upload-hint {
+  font-size: 0.72rem;
+  color: var(--adm-t3);
+}
+
+/* Fields 2-column grid */
+.cts-fields-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.cts-field {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.cts-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--adm-t2);
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+}
+
+/* =====================================================
+   TRADER LOGS — REFORMED
+   ===================================================== */
+
+.tls-header {
+  margin-bottom: 24px;
+}
+
+.tls-tag {
+  display: inline-block;
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: var(--adm-accent);
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  margin-bottom: 8px;
+}
+
+.tls-title {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--adm-t1);
+  letter-spacing: -0.5px;
+  margin-bottom: 6px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.tls-count {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 28px;
+  height: 24px;
+  padding: 0 10px;
+  background: var(--adm-soft);
+  border: 1px solid var(--adm-accent-b) !important;
+  border-radius: 100px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--adm-accent);
+}
+
+.tls-sub {
+  font-size: 0.82rem;
+  color: var(--adm-t2);
+}
+
+/* Trader card */
+.admin-trader-card {
+  background: var(--adm-surface);
+  border: 1px solid var(--adm-border) !important;
+  border-radius: var(--adm-r);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  transition: border-color var(--adm-t), transform var(--adm-t), box-shadow var(--adm-t);
+}
+
+.admin-trader-card:hover {
+  border-color: var(--adm-accent-b) !important;
+  transform: translateY(-3px);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.35), 0 0 0 1px rgba(48,193,142,0.07);
+}
+
+/* Card top: avatar + name + delete */
+.atc-top {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.atc-avatar-wrap {
+  position: relative;
+  width: 52px;
+  height: 52px;
+  flex-shrink: 0;
+}
+
+.atc-avatar {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--adm-accent-b) !important;
+  display: block;
+}
+
+.atc-live-dot {
+  position: absolute;
+  bottom: 1px;
+  right: 1px;
+  width: 11px;
+  height: 11px;
+  background: var(--adm-accent);
+  border-radius: 50%;
+  border: 2px solid var(--adm-surface) !important;
+  animation: atc-pulse 2.2s ease-in-out infinite;
+}
+
+@keyframes atc-pulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(48,193,142,0.55); }
+  50%       { box-shadow: 0 0 0 5px rgba(48,193,142,0); }
+}
+
+.atc-identity {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.atc-name {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--adm-t1);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.atc-status-badge {
+  font-size: 0.68rem;
+  font-weight: 600;
+  color: var(--adm-accent);
+  letter-spacing: 0.3px;
+}
+
+.atc-delete-btn {
+  width: 34px;
+  height: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--adm-dsoft);
+  border: 1px solid rgba(255,77,106,0.15) !important;
+  border-radius: var(--adm-rs);
+  cursor: pointer;
+  color: var(--adm-danger);
+  font-size: 1.1rem;
+  flex-shrink: 0;
+  transition: background var(--adm-t);
+}
+
+.atc-delete-btn:hover { background: rgba(255,77,106,0.22); }
+
+/* Divider */
+.atc-divider {
+  height: 1px;
+  background: var(--adm-border);
+}
+
+/* Stats */
+.atc-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+
+.atc-stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  padding: 12px 6px;
+  background: var(--adm-elevated);
+  border: 1px solid var(--adm-border) !important;
+  border-radius: var(--adm-rs);
+  text-align: center;
+}
+
+.atc-stat-icon {
+  font-size: 0.95rem;
+  color: var(--adm-accent);
+  display: flex;
+  align-items: center;
+  line-height: 1;
+}
+
+.atc-stat-val {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--adm-t1);
+  line-height: 1;
+}
+
+.atc-stat-lbl {
+  font-size: 0.6rem;
+  font-weight: 700;
+  color: var(--adm-t3);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Update Log button */
+.atc-update-btn {
+  width: 100%;
+  height: 42px;
+  background: var(--adm-soft);
+  border: 1px solid var(--adm-accent-b) !important;
+  border-radius: var(--adm-rs);
+  color: var(--adm-accent);
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  cursor: pointer;
+  transition: background var(--adm-t), box-shadow var(--adm-t);
+}
+
+.atc-update-btn:hover {
+  background: rgba(48,193,142,0.18);
+  box-shadow: 0 0 20px rgba(48,193,142,0.18);
+}
+
+/* =====================================================
+   RESPONSIVE
+   ===================================================== */
+
+@media (max-width: 900px) {
+  .admin-stats-row { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 768px) {
+  .admin-dash .dashboardhomepage { margin-left: 0; }
+  .admin-dash .userdashboard-sidebar { transform: translateX(-100%) !important; }
+  .admin-page-header,
+  .transaction-container.dash-b,
+  .transaction-container.no-ref.dash-b,
+  .traders-log-section,
+  .create-trader-section { padding: 20px 16px; }
+  .admin-stats-row { padding: 20px 16px 24px; gap: 12px; }
+  .active-trader-container { grid-template-columns: 1fr; }
+  .cts-fields-grid { grid-template-columns: 1fr; }
+  .create-trader-form { width: 100%; }
+  .cts-upload-zone { flex-direction: column; align-items: flex-start; }
+}
+
+@media (max-width: 520px) {
+  .admin-stats-row { grid-template-columns: 1fr 1fr; }
+  .stat-value { font-size: 1.3rem; }
+  .copy-trader-row { flex-direction: column; align-items: flex-start; gap: 8px; }
+  .ct-inputs { width: 100%; }
+  .ct-amount-input { flex: 1; width: auto; }
+  .ct-type-select { flex: 1; width: auto; }
+}
