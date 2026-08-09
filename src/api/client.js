@@ -1,5 +1,11 @@
-import { API_URL } from '../config/env'
+import { API_URL as RAW_API_URL } from '../config/env'
 import { getToken } from '../auth/tokenStorage'
+
+// A trailing slash in the configured API_URL (easy to introduce via a Vercel
+// env var) combined with a path like '/api/login' produces a double slash,
+// which Vercel 308-redirects - and browsers refuse to follow a redirect on a
+// CORS preflight, breaking every request with an opaque CORS error.
+const API_URL = RAW_API_URL.replace(/\/+$/, '')
 
 const buildHeaders = ({ auth, extraHeaders } = {}) => {
   const headers = { 'Content-Type': 'application/json', ...extraHeaders }
