@@ -8,6 +8,7 @@ import './userdashboardreferrals.css'
 import Loader from '../Loader'
 import { getData } from '../../api/user'
 import { useAuth } from '../../context/AuthContext'
+import { isAuthError } from '../../auth/tokenStorage'
 
 const Userdashboardreferrals = () => {
   const [clipBoard, setClipBoard] = useState(false)
@@ -31,9 +32,9 @@ const Userdashboardreferrals = () => {
       const fetchData = async () => {
         try {
           const res = await getData()
-          if (res.status === 'error') {
+          if (isAuthError(res)) {
             navigate('/login')
-          } else {
+          } else if (res.status !== 'error') {
             setUserData(res)
           }
         } catch (error) {

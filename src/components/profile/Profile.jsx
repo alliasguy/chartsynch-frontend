@@ -10,6 +10,7 @@ import Loader from '../Loader';
 import MobileDropdown from '../MobileDropdown';
 import { getData, updateUserData, changePassword } from '../../api/user';
 import { useAuth } from '../../context/AuthContext';
+import { isAuthError } from '../../auth/tokenStorage';
 import { CLOUDINARY_UPLOAD_URL, CLOUDINARY_UPLOAD_PRESET } from '../../config/thirdParty';
 
 const Profile = () => {
@@ -41,10 +42,10 @@ const Profile = () => {
         }
 
         const data = await getData();
-        if (data.status === 'error') {
+        if (isAuthError(data)) {
           logout();
           navigate('/login');
-        } else {
+        } else if (data.status !== 'error') {
           setUserData(data);
         }
       } catch (error) {

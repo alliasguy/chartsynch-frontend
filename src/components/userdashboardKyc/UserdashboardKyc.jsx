@@ -10,6 +10,7 @@ import './userdashboardkyc.css';
 import { getData } from '../../api/user';
 import { apiFetchWithStatus } from '../../api/client';
 import { useAuth } from '../../context/AuthContext';
+import { isAuthError } from '../../auth/tokenStorage';
 import { CLOUDINARY_UPLOAD_URL, CLOUDINARY_UPLOAD_PRESET } from '../../config/thirdParty';
 
 const UserdashboardKyc = () => {
@@ -57,10 +58,10 @@ const UserdashboardKyc = () => {
 
         const data = await getData();
 
-        if (data.status === 'error') {
+        if (isAuthError(data)) {
           logout();
           navigate('/login');
-        } else {
+        } else if (data.status !== 'error') {
           setUserData(data);
           // Pre-fill form with existing KYC data if any
           if (data.kycStatus !== 'not_submitted') {

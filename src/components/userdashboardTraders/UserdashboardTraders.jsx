@@ -16,6 +16,7 @@ import CopyModal from '../CopyModal'
 import { getData as getUserData, copytrade, stopcopytrade } from '../../api/user'
 import { fetchTraders as fetchTradersRequest } from '../../api/trader'
 import { useAuth } from '../../context/AuthContext'
+import { isAuthError } from '../../auth/tokenStorage'
 const UserdashboardTraders = () => {
   const [loader, setLoader] = useState(false)
   const [showTrader, setShowTrader] = useState(false)
@@ -55,10 +56,10 @@ const UserdashboardTraders = () => {
       const data = await getUserData();
 
       // Handle errors from the API
-      if (data.status === 'error') {
+      if (isAuthError(data)) {
         logout(); // Clear invalid token
         navigate('/login');
-      } else {
+      } else if (data.status !== 'error') {
         setUserData(data); // Set user data
       }
     } catch (error) {

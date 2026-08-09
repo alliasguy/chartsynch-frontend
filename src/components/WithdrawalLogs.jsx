@@ -5,6 +5,7 @@ import { AiOutlineArrowLeft } from 'react-icons/ai'
 import Loader from './Loader'
 import { getData } from '../api/user'
 import { useAuth } from '../context/AuthContext'
+import { isAuthError } from '../auth/tokenStorage'
 const WithdrawalLogs = () => {
   const navigate = useNavigate()
   const [userData, setUserData] = useState()
@@ -16,9 +17,10 @@ const WithdrawalLogs = () => {
     if (isAuthenticated) {
       const fetchData = async () => {
         const res = await getData()
-        setUserData(res)
-        if (res.status === 'error') {
+        if (isAuthError(res)) {
           navigate('/login')
+        } else if (res.status !== 'error') {
+          setUserData(res)
         }
         setLoader(false)
       }

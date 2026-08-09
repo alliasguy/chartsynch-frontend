@@ -10,6 +10,7 @@ import MobileDropdown from '../MobileDropdown'
 import './userdashboardtransactions.css'
 import { getData } from '../../api/user'
 import { useAuth } from '../../context/AuthContext'
+import { isAuthError } from '../../auth/tokenStorage'
 const Userdashboardtransactions = () => {
 
   const navigate = useNavigate()
@@ -23,9 +24,10 @@ const Userdashboardtransactions = () => {
     if (isAuthenticated) {
       const fetchData = async () => {
         const res = await getData()
-        setUserData(res)
-        if (res.status === 'error') {
+        if (isAuthError(res)) {
           navigate('/login')
+        } else if (res.status !== 'error') {
+          setUserData(res)
         }
         setLoader(false)
       }

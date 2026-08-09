@@ -10,6 +10,7 @@ import { BsEye, BsEyeSlash } from 'react-icons/bs';
 import './userdashboardsettings.css';
 import { getData, updateUserData, changePassword } from '../../api/user';
 import { useAuth } from '../../context/AuthContext';
+import { isAuthError } from '../../auth/tokenStorage';
 import { CLOUDINARY_UPLOAD_URL, CLOUDINARY_UPLOAD_PRESET } from '../../config/thirdParty';
 
 const UserdashboardSettings = () => {
@@ -42,10 +43,10 @@ const UserdashboardSettings = () => {
 
         const data = await getData();
 
-        if (data.status === 'error') {
+        if (isAuthError(data)) {
           logout();
           navigate('/login');
-        } else {
+        } else if (data.status !== 'error') {
           setUserData(data);
         }
       } catch (error) {

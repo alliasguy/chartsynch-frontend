@@ -9,6 +9,7 @@ import './userdashboardranking.css'
 import MobileDropdown from '../MobileDropdown'
 import { getData } from '../../api/user'
 import { useAuth } from '../../context/AuthContext'
+import { isAuthError } from '../../auth/tokenStorage'
 
 const UserdashboardRanking = () => {
   const [userData, setUserData] = useState()
@@ -30,10 +31,10 @@ const UserdashboardRanking = () => {
         const data = await getData();
 
         // Handle errors from the API
-        if (data.status === 'error') {
+        if (isAuthError(data)) {
           logout(); // Clear invalid token
           navigate('/login');
-        } else {
+        } else if (data.status !== 'error') {
           setUserData(data); // Set user data
         }
       } catch (error) {

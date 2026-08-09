@@ -274,11 +274,18 @@
 
 @media screen and (max-width: 767px) {
     .m-drop-container {
-        width: 100%;
+        width: 100vw;
+        height: 100vh;
+        height: 100dvh;
         position: fixed;
         top: 0;
+        left: 0;
         right: 0;
-        z-index: 10 !important;
+        bottom: 0;
+        background: rgba(7, 9, 14, 0.75);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        z-index: 999998 !important;
     }
 
     .userdashboard-sidebar {
@@ -288,17 +295,30 @@
 
     .mobile-tabs {
         width: 100%;
-        display: block;
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
     }
 
     .drop-down {
-        width: 90%;
-        overflow: auto;
+        width: 320px;
+        max-width: 88vw;
+        overflow-y: auto;
+        overflow-x: hidden;
         height: 100vh;
-        position: absolute;
+        height: 100dvh;
+        position: fixed;
         top: 0;
         right: 0;
-        z-index: 20;
+        bottom: 0;
+        z-index: 999999 !important;
+        background: rgba(15, 23, 42, 0.98);
+        backdrop-filter: blur(28px);
+        -webkit-backdrop-filter: blur(28px);
+        box-shadow: -10px 0 40px rgba(0, 0, 0, 0.85);
+        border-radius: 0;
+        padding: 24px 16px;
+        box-sizing: border-box;
     }
 
     .userdashboard-logo-container {
@@ -306,6 +326,6 @@
     }
 
     .dropdown-tabs {
-        z-index: 10;
+        z-index: 1;
     }
 }
