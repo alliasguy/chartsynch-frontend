@@ -1808,7 +1808,7 @@ button.next .icon svg { width: 15px; height: 15px; fill: #0a0a0e; }
   .transaction-container.no-ref.dash-b,
   .traders-log-section,
   .create-trader-section { padding: 20px 16px; }
-  .admin-stats-row { padding: 20px 16px 24px; gap: 12px; }
+  .admin-stats-row { width: 90% !important; margin: 0 auto !important; padding: 20px 0 24px; gap: 12px; }
   .active-trader-container { grid-template-columns: 1fr; }
   .cts-fields-grid { grid-template-columns: 1fr; }
   .create-trader-form { width: 100%; }

@@ -301,8 +301,8 @@
     }
 
     .drop-down {
-        width: 320px;
-        max-width: 88vw;
+        width: 260px;
+        max-width: 75vw;
         overflow-y: auto;
         overflow-x: hidden;
         height: 100vh;
@@ -317,7 +317,7 @@
         -webkit-backdrop-filter: blur(28px);
         box-shadow: -10px 0 40px rgba(0, 0, 0, 0.85);
         border-radius: 0;
-        padding: 24px 16px;
+        padding: 20px 14px;
         box-sizing: border-box;
     }
 
