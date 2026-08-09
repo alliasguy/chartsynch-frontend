@@ -1659,3 +1659,12 @@ select option,
     word-break: break-word;
   }
 }
+
+/* Responsive TradingView Widgets & iFrames */
+.tradingview-widget-container,
+.tradingview-widget-container__widget,
+.tradingview-widget-container iframe,
+iframe[id^="tradingview_"] {
+  max-width: 100% !important;
+  box-sizing: border-box !important;
+}
