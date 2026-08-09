@@ -497,54 +497,129 @@
 
 @media screen and (max-width: 767px) {
     .dashboardhomepage {
-        width: 100%;
+        width: 100% !important;
+        padding: 14px 12px 40px !important;
+        box-sizing: border-box !important;
+        margin: 0 !important;
     }
-    .notification-card p{
-        font-size: .8rem;
+
+    .notification-card {
+        padding: 12px 14px !important;
+    }
+
+    .notification-card p {
+        font-size: 0.85rem;
         text-align: left;
     }
-    .close-notification-container{
-        font-size: 1.5rem;
-        border-radius: 15px;
+
+    .close-notification-container {
+        font-size: 1.3rem;
+        border-radius: 12px;
     }
-    .upper-overview-card{
+
+    .dashboard-overview-container {
+        width: 100% !important;
+        border-radius: 20px;
+        padding: 16px 14px;
+        margin: 16px 0;
+        box-sizing: border-box !important;
+    }
+
+    .upper-overview-card {
         flex-direction: column;
+        width: 100% !important;
+        padding: 10px 0;
     }
-    .rank-container{
+
+    .rank-container {
         display: none;
     }
-    .total-balance-container{
-        width: 90% !important;
-        margin: 0 auto !important;
+
+    .total-balance-container {
+        width: 100% !important;
+        padding: 10px 0;
+        margin: 0 !important;
+        box-sizing: border-box !important;
     }
-    .overview-btn-container{
-        width: 100%;
-        align-items: flex-start;
+
+    .amount {
+        width: 100% !important;
+        justify-content: flex-start;
+        gap: 12px;
+        margin-top: 8px;
     }
-    .deposit-btn-container{
-        width: 100%;
-        justify-content: space-between;
+
+    .amount h3 {
+        font-size: 1.75rem;
     }
-    .lower-overview-card-container{
-        flex-direction:column ;
-        align-items: center;
+
+    .overview-btn-container {
+        width: 100% !important;
+        margin-top: 14px;
+        align-items: stretch;
     }
-    .lower-overview-card{
-        width: 90% !important;
-        margin: 10px auto !important;
+
+    .deposit-btn-container {
+        width: 100% !important;
+        padding: 6px 0;
+        justify-content: flex-start;
+        gap: 10px;
+        flex-wrap: wrap;
     }
-    .referral-section{
+
+    .user-deposit-btn {
+        width: 100% !important;
+        max-width: 100% !important;
+        padding: 12px 18px;
+    }
+
+    .lower-overview-card-container {
+        width: 100% !important;
         flex-direction: column;
-        padding: 0px;
+        gap: 12px;
+        margin: 16px 0;
     }
-    .referraltext-wrapper{
+
+    .lower-overview-card {
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 16px 14px;
+        box-sizing: border-box !important;
+    }
+
+    .dashboard-chart-container {
+        width: 100% !important;
+        padding: 16px 10px !important;
+        height: 380px !important;
+        margin-top: 20px;
+        box-sizing: border-box !important;
+        border-radius: 18px;
+    }
+
+    .referral-section {
+        width: 100% !important;
+        flex-direction: column;
+        padding: 20px 14px !important;
+        margin-top: 20px;
+        box-sizing: border-box !important;
+        border-radius: 18px;
+    }
+
+    .referraltext-wrapper {
         width: 100%;
+        flex-wrap: wrap;
+        gap: 10px;
     }
-    .referral-card1{
-        width: 98%;
-        margin: 15px 0px;
+
+    .referral-card1 {
+        width: 100% !important;
+        margin: 12px 0px !important;
+        padding: 16px 14px;
+        box-sizing: border-box !important;
+        border-radius: 16px;
         height: auto;
     }
+
     .dashboardheaderwrapper {
         justify-content: space-between;
         padding: 10px 0px;
