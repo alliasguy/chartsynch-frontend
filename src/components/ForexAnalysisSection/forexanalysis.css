@@ -65,6 +65,14 @@
 }
 
 @media (max-width: 990px) {
-    .forex-analysis-section { padding: 60px 0; }
-    .analysis-grid { grid-template-columns: 1fr; }
+    .forex-analysis-section { padding: 44px 0; }
+    .analysis-grid { grid-template-columns: 1fr; padding: 0 16px; gap: 20px; }
+    .glass-panel-vertical { padding: 24px 18px; border-radius: 20px; }
+    .analysis-card-header h3 { font-size: clamp(1.35rem, 5vw, 1.6rem); }
+    .analysis-card-header p { font-size: 0.95rem; }
+    .analysis-widget-wrapper { height: 420px; border-radius: 16px; }
+}
+
+@media (max-width: 480px) {
+    .analysis-widget-wrapper { height: 380px; }
 }

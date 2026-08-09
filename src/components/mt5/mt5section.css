@@ -192,10 +192,17 @@
 }
 
 @media (max-width: 990px) {
-    .mt5-section { padding: 80px 0; }
-    .mt5-content-wrapper { grid-template-columns: 1fr; gap: 60px; text-align: center; }
+    .mt5-section { padding: 50px 0; }
+    .mt5-content-wrapper { grid-template-columns: 1fr; gap: 40px; text-align: center; }
     .mt5-content { align-items: center; }
-    .feature-list { align-items: center; }
-    .platform-mockup { width: 100%; }
+    .mt5-content h1 { font-size: clamp(1.8rem, 6.5vw, 2.5rem); line-height: 1.25; }
+    .mt5-content p { font-size: 0.96rem; max-width: 100%; }
+    .feature-list { align-items: center; text-align: left; }
+    .platform-mockup { width: 100%; border-radius: 16px; }
     .floating-badge { display: none; }
+}
+
+@media (max-width: 480px) {
+    .mt5-section { padding: 40px 0; }
+    .platform-tag { font-size: 0.76rem; padding: 5px 12px; }
 }

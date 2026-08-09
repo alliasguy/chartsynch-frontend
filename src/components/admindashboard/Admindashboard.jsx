@@ -734,7 +734,7 @@ const Admindashboard = () => {
             e.preventDefault()
             login()
           }}>
-            <img src="/elitesynchmock9.png" alt="" className="login-logo" />
+            <img src="/chartsynchlogo4.jpeg" alt="ChartSynch Logo" className="login-logo" />
             <div class="title_container">
               <p class="titles">welcome admin</p>
               <span class="subtitle">Welcome to ChartSynch, login and enjoy the best copytrading experience.</span>

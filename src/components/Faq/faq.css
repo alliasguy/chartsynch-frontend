@@ -114,3 +114,13 @@
     font-size: 0.98rem;
     margin: 0;
 }
+
+@media (max-width: 768px) {
+    .faq-section { padding: 44px 0; }
+    .faq-wrapper { width: 100%; padding: 0 16px; margin-bottom: 32px; }
+    .faq-wrapper .center-header h2 { font-size: clamp(1.7rem, 6vw, 2.3rem); line-height: 1.25; }
+    .faq-container { width: 100%; padding: 0 16px; gap: 12px; }
+    .question-tab { padding: 18px 16px; }
+    .question-tab h2 { font-size: 1.02rem; padding-right: 12px; }
+    .answer-tab p { padding: 0 16px 20px; font-size: 0.94rem; }
+}

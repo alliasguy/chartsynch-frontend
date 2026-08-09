@@ -102,23 +102,50 @@
 }
 
 @media (max-width: 900px) {
+  .footer { padding: 50px 0 24px; }
   .footer-content {
     grid-template-columns: 1fr 1fr;
+    gap: 32px;
+    padding-bottom: 40px;
   }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 520px) {
   .footer-content {
     grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .footer-brand h2 {
+    font-size: 1.5rem;
+    margin-bottom: 14px;
+  }
+
+  .footer-text {
+    max-width: 100%;
+    font-size: 0.92rem;
+  }
+
+  .footer-col li {
+    margin-bottom: 14px;
+  }
+
+  .footer-col a {
+    display: inline-block;
+    padding: 2px 0;
+    font-size: 0.92rem;
   }
 
   .footer-bottom {
     flex-direction: column;
     gap: 16px;
+    text-align: center;
+    padding-top: 24px;
   }
 
   .footer-bottom-links {
     flex-wrap: wrap;
     justify-content: center;
+    gap: 16px;
   }
 }

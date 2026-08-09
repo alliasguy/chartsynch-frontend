@@ -205,7 +205,7 @@ const Signup = () => {
           e.preventDefault()
           Signup()
         }}>
-          <img src="/elitesynchmock1.png" alt="" className="signup-logo" onClick={() => {
+          <img src="/chartsynchlogo4.jpeg" alt="ChartSynch Logo" className="signup-logo" onClick={() => {
             navigate('/')
           }} />
           <span className="subtitle">Get started with ChartSynch, just create an account and enjoy the best copytrading experience.</span>

@@ -301,12 +301,28 @@
 
 @media (max-width: 640px) {
   .plan-section {
-    padding: 60px 16px;
+    padding: 40px 16px;
   }
   .plan-title {
-    font-size: 2rem;
+    font-size: clamp(1.8rem, 6.5vw, 2.3rem);
+  }
+  .plan-subtitle {
+    font-size: 0.92rem;
+    padding: 0 8px;
   }
   .plan-card-container {
     grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .pricing-plan-card {
+    padding: 24px 20px;
+    border-radius: 20px;
+  }
+  .plan-cta-btn {
+    width: 100%;
+    min-height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 }

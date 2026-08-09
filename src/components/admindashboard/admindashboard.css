@@ -1813,9 +1813,28 @@ button.next .icon svg { width: 15px; height: 15px; fill: #0a0a0e; }
   .cts-fields-grid { grid-template-columns: 1fr; }
   .create-trader-form { width: 100%; }
   .cts-upload-zone { flex-direction: column; align-items: flex-start; }
+
+  /* Mobile table touch scrolling container */
+  .transaction-container,
+  .admin-dash .transaction-container {
+    width: 100% !important;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch;
+    box-sizing: border-box;
+    padding: 14px 12px !important;
+  }
+
+  .admin-dash table {
+    min-width: 600px;
+  }
 }
 
 @media (max-width: 520px) {
+  .admin-dash .form {
+    width: 96% !important;
+    padding: 32px 20px !important;
+    border-radius: 18px !important;
+  }
   .admin-stats-row { grid-template-columns: 1fr 1fr; }
   .stat-value { font-size: 1.3rem; }
   .copy-trader-row { flex-direction: column; align-items: flex-start; gap: 8px; }
@@ -1823,3 +1842,4 @@ button.next .icon svg { width: 15px; height: 15px; fill: #0a0a0e; }
   .ct-amount-input { flex: 1; width: auto; }
   .ct-type-select { flex: 1; width: auto; }
 }
+

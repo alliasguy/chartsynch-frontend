@@ -136,7 +136,16 @@
 }
 
 @media (max-width: 990px) {
+    .review-section { padding: 44px 0; }
+    .center-header h2 { font-size: clamp(1.7rem, 6vw, 2.3rem); line-height: 1.25; }
+    .center-header p { font-size: 0.96rem; }
     .review-grid {
         grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 0 16px;
+    }
+    .review-glass-card {
+        padding: 24px 20px;
+        border-radius: 20px;
     }
 }

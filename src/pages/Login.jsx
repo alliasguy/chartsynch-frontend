@@ -96,7 +96,7 @@ const Login = () => {
           e.preventDefault()
           login()
         }}>
-          <img src="/elitesynchmock9.png" alt="ChartSynch Logo" className="login-logo" onClick={() => {
+          <img src="/chartsynchlogo4.jpeg" alt="ChartSynch Logo" className="login-logo" onClick={() => {
             navigate('/')
           }} />
           <div class="title_container">
