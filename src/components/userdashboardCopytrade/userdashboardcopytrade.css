@@ -136,3 +136,109 @@
   box-shadow: 0 8px 25px rgba(48, 193, 142, 0.45);
   filter: brightness(1.1);
 }
+
+/* Mobile Responsive Styling for CopyTrading Dashboard */
+@media screen and (max-width: 767px) {
+  .copytrade-dashboard-wrapper {
+    width: 100% !important;
+    padding: 20px 12px 60px !important;
+    box-sizing: border-box !important;
+  }
+
+  .copytrade-grid {
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+    margin-top: 20px !important;
+  }
+
+  .trader-card-glass {
+    padding: 20px 16px !important;
+    border-radius: 18px !important;
+  }
+
+  .page-swiper-wrapper,
+  .trans-page {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 0 !important;
+    box-sizing: border-box !important;
+  }
+
+  .page-header {
+    width: 100% !important;
+    text-align: left !important;
+    padding: 16px 4px 10px !important;
+  }
+
+  .page-header h2 {
+    font-size: clamp(1.4rem, 5vw, 1.8rem) !important;
+    text-transform: capitalize;
+    color: #ffffff;
+  }
+
+  .page-header p {
+    font-size: 0.9rem !important;
+    color: #94a3b8;
+  }
+
+  .transaction-container,
+  .transaction-container.no-ref {
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch;
+    padding: 12px 10px !important;
+    box-sizing: border-box !important;
+    border-radius: 16px !important;
+    margin-top: 14px !important;
+  }
+
+  .transaction-container table {
+    min-width: 520px !important;
+    width: 100% !important;
+  }
+
+  .transaction-container td,
+  .transaction-container th {
+    padding: 12px 10px !important;
+    font-size: 0.88rem !important;
+  }
+
+  .empty-page {
+    width: 100% !important;
+    padding: 30px 16px !important;
+    box-sizing: border-box !important;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .empty-page img,
+  .dash-empty-img {
+    max-width: 220px !important;
+    width: 100% !important;
+    height: auto !important;
+    object-fit: contain !important;
+  }
+
+  .empty-page p {
+    font-size: 0.95rem !important;
+    line-height: 1.5 !important;
+    color: #94a3b8;
+    margin: 16px 0 !important;
+    max-width: 100% !important;
+  }
+
+  .empty-page a {
+    display: inline-block;
+    padding: 12px 32px;
+    background: linear-gradient(135deg, #30c18e 0%, #06b6d4 100%);
+    color: #07090e;
+    font-weight: 700;
+    border-radius: 12px;
+    text-decoration: none;
+    min-height: 46px;
+    line-height: 22px;
+  }
+}

@@ -53,23 +53,20 @@ const Userdashboardtransactions = () => {
       }
       {userData && userData.transaction.length !== 0 ?
         <section className='dashboardhomepage'>
+          <MobileDropdown showStatus={showMobileDropdown} closeMenu={closeMobileMenu} />
           <div className="dashboardheaderwrapper">
-            <div className="dashboardheaderwrapper">
-              <div className="header-notification-icon-container">
-                <IoMdNotifications />
+            <div className="header-notification-icon-container">
+              <IoMdNotifications />
+            </div>
+            <div className="header-username-container">
+              <h3>Hi, {userData ? userData.firstname : ''}</h3>
+            </div>
+            <div className="header-userprofile-container" onClick={() => { setShowMobileDropdown(!showMobileDropdown); }}>
+              <div className="user-p-icon-container">
+                <FaUserAlt />
               </div>
-              <div className="header-username-container">
-                <h3>Hi, {userData ? userData.firstname : ''}</h3>
-              </div>
-              <div className="header-userprofile-container" onClick={() => { setShowMobileDropdown(!showMobileDropdown); }
-              }>
-                <div className="user-p-icon-container">
-                  <FaUserAlt />
-                </div>
-                <div className="user-p-drop-icon" >
-                  <FaAngleDown />
-                </div>
-
+              <div className="user-p-drop-icon">
+                <FaAngleDown />
               </div>
             </div>
           </div>
@@ -85,7 +82,6 @@ const Userdashboardtransactions = () => {
               <p>we keep track of all your transactions</p>
             </div>
             <div className="transaction-container no-ref">
-              <MobileDropdown showStatus={showMobileDropdown} closeMenu={closeMobileMenu} />
               <table>
                 <thead>
                   <tr>
@@ -99,7 +95,7 @@ const Userdashboardtransactions = () => {
                 <tbody>
                   {
                     userData.transaction.map(refer =>
-                      <tr>
+                      <tr key={refer.id}>
                         <td>{refer.id}</td>
                         <td>{refer.type}</td>
                         <td>$ {refer.amount} USD</td>
@@ -115,27 +111,24 @@ const Userdashboardtransactions = () => {
         </section>
         :
         <section className='dashboardhomepage'>
+          <MobileDropdown showStatus={showMobileDropdown} closeMenu={closeMobileMenu} />
           <div className="dashboardheaderwrapper">
-            <div className="dashboardheaderwrapper">
-              <div className="header-notification-icon-container">
-                <IoMdNotifications />
+            <div className="header-notification-icon-container">
+              <IoMdNotifications />
+            </div>
+            <div className="header-username-container">
+              <h3>Hi, {userData ? userData.firstname : ''}</h3>
+            </div>
+            <div className="header-userprofile-container" onClick={() => { setShowMobileDropdown(!showMobileDropdown); }}>
+              <div className="user-p-icon-container">
+                <FaUserAlt />
               </div>
-              <div className="header-username-container">
-                <h3>Hi, {userData ? userData.firstname : ''}</h3>
-              </div>
-              <div className="header-userprofile-container" onClick={() => { setShowMobileDropdown(!showMobileDropdown); }
-              }>
-                <div className="user-p-icon-container">
-                  <FaUserAlt />
-                </div>
-                <div className="user-p-drop-icon">
-                  <FaAngleDown />
-                </div>
+              <div className="user-p-drop-icon">
+                <FaAngleDown />
               </div>
             </div>
           </div>
           <div className="empty-page">
-            <MobileDropdown showStatus={showMobileDropdown} closeMenu={closeMobileMenu} />
             <img src="/unold_icon1_animation_loop_f.gif" alt="" className='empty-img' />
             <p>you have not performed any transaction yet</p>
             <Link to='/fundwallet'>deposit</Link>
