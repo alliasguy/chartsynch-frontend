@@ -31,117 +31,116 @@ const MobileDropdown = ({ showStatus, closeMenu }) => {
         }
 
     }, [isAuthenticated, navigate])
+    if (!showStatus) return null;
+
     return (
-        <div className='m-drop-container'>
-            {
-                showStatus &&
-                <div className="drop-down" onBlur={() => {
+        <div className='m-drop-container' onClick={closeMenu}>
+            <div className="drop-down" onClick={(e) => e.stopPropagation()} onBlur={() => {
+                closeMenu()
+            }}>
+                <div className="dropdown-tabs" onClick={() => {
                     closeMenu()
                 }}>
-                    <div className="dropdown-tabs" onClick={() => {
-                        closeMenu()
-                    }}>
-                        <AiOutlineClose />
-                        <p>close</p>
-                    </div>
-                    <div className="dropdown-header">
-                        <span className="profile-pic-container">
-                            {userData && userData.profilepicture !== '' ? <img src={userData.profilepicture ? userData.profilepicture : ''} alt="" /> : userData.firstname.charAt(0)}
-                        </span>
-                        <span className="dropdown-user-details">
-                            <p className='dropdown-name'>{userData ? userData.firstname : 'john doe'}</p>
-                            <p className='dropdown-email'>{userData ? userData.email : 'johndoe@gmail.com'}</p>
-                        </span>
-                    </div>
+                    <AiOutlineClose />
+                    <p>close</p>
+                </div>
+                <div className="dropdown-header">
+                    <span className="profile-pic-container">
+                        {userData && userData.profilepicture !== '' ? <img src={userData.profilepicture ? userData.profilepicture : ''} alt="" /> : userData.firstname.charAt(0)}
+                    </span>
+                    <span className="dropdown-user-details">
+                        <p className='dropdown-name'>{userData ? userData.firstname : 'john doe'}</p>
+                        <p className='dropdown-email'>{userData ? userData.email : 'johndoe@gmail.com'}</p>
+                    </span>
+                </div>
 
-                    <div className="dropdown-deposit-container">
-                        <h3>total amount</h3>
-                        <h2>${userData ? userData.funded : ''} USD</h2>
-                        <p>Trading Rank :   {userData && userData.funded >= 5000 ? "Gold" : 'Silver'}</p>
-                    </div>
-                    <div className="mobile-tabs">
-                        <div className="dropdown-tabs" onClick={() => {
-                            navigate('/dashboard')
-                        }}>
-                            <RxDashboard />
-                            <p>dashboard</p>
-                        </div>
-                        <div className="dropdown-tabs" onClick={() => {
-                            navigate('/fundwallet')
-                        }}>
-                            <GiReceiveMoney />
-                            <p>deposit</p>
-                        </div>
-                        <div className="dropdown-tabs" onClick={() => {
-                            navigate('/traders')
-                        }}>
-                            <AiOutlineStock />
-                            <p>Mirror Traders</p>
-                        </div>
-                        <div className="dropdown-tabs" onClick={() => {
-                            navigate('/usercopytrade')
-                        }}>
-                            <FaRegChartBar />
-                            <p>Mirror Trading</p>
-                        </div>
-                        <div className="dropdown-tabs" onClick={() => {
-                            navigate('/live-trading')
-                        }}>
-                            <GrLineChart />
-                            <p>Live Trading</p>
-                        </div>
-                        <div className="dropdown-tabs" onClick={() => {
-                            navigate('/transactions')
-                        }}>
-                            <GrTransaction />
-                            <p>Transactions</p>
-                        </div>
-                        <div className="dropdown-tabs" onClick={() => {
-                            navigate('/ranking')
-                        }}>
-                            <FiAward />
-                            <p>Ranking</p>
-                        </div>
-                        <div className="dropdown-tabs" onClick={() => {
-                            navigate('/referrals')
-                        }}>
-                            <FiUsers />
-                            <p>Referrals</p>
-                        </div>
-                        <div className="dropdown-tabs" onClick={() => {
-                            navigate('/withdraw')
-                        }}>
-                            <RiLuggageDepositLine />
-                            <p>withdraw</p>
-                        </div>
+                <div className="dropdown-deposit-container">
+                    <h3>total amount</h3>
+                    <h2>${userData ? userData.funded : ''} USD</h2>
+                    <p>Trading Rank :   {userData && userData.funded >= 5000 ? "Gold" : 'Silver'}</p>
+                </div>
+                <div className="mobile-tabs">
+                    <div className="dropdown-tabs" onClick={() => {
+                        navigate('/dashboard')
+                    }}>
+                        <RxDashboard />
+                        <p>dashboard</p>
                     </div>
                     <div className="dropdown-tabs" onClick={() => {
-                        navigate('/settings')
+                        navigate('/fundwallet')
                     }}>
-                        <AiOutlineSetting />
-                        <p>settings</p>
+                        <GiReceiveMoney />
+                        <p>deposit</p>
                     </div>
                     <div className="dropdown-tabs" onClick={() => {
-                        navigate('/passwordreset')
+                        navigate('/traders')
                     }}>
-                        <AiOutlineSetting />
-                        <p>password reset</p>
+                        <AiOutlineStock />
+                        <p>Mirror Traders</p>
                     </div>
                     <div className="dropdown-tabs" onClick={() => {
-                        navigate('/kyc')
+                        navigate('/usercopytrade')
                     }}>
-                        <RiLockPasswordLine />
-                        <p>kyc</p>
+                        <FaRegChartBar />
+                        <p>Mirror Trading</p>
                     </div>
-
                     <div className="dropdown-tabs" onClick={() => {
-                        logout()
+                        navigate('/live-trading')
                     }}>
-                        <FiLogOut />
-                        <p>logout</p>
+                        <GrLineChart />
+                        <p>Live Trading</p>
+                    </div>
+                    <div className="dropdown-tabs" onClick={() => {
+                        navigate('/transactions')
+                    }}>
+                        <GrTransaction />
+                        <p>Transactions</p>
+                    </div>
+                    <div className="dropdown-tabs" onClick={() => {
+                        navigate('/ranking')
+                    }}>
+                        <FiAward />
+                        <p>Ranking</p>
+                    </div>
+                    <div className="dropdown-tabs" onClick={() => {
+                        navigate('/referrals')
+                    }}>
+                        <FiUsers />
+                        <p>Referrals</p>
+                    </div>
+                    <div className="dropdown-tabs" onClick={() => {
+                        navigate('/withdraw')
+                    }}>
+                        <RiLuggageDepositLine />
+                        <p>withdraw</p>
                     </div>
                 </div>
-            }
+                <div className="dropdown-tabs" onClick={() => {
+                    navigate('/settings')
+                }}>
+                    <AiOutlineSetting />
+                    <p>settings</p>
+                </div>
+                <div className="dropdown-tabs" onClick={() => {
+                    navigate('/passwordreset')
+                }}>
+                    <AiOutlineSetting />
+                    <p>password reset</p>
+                </div>
+                <div className="dropdown-tabs" onClick={() => {
+                    navigate('/kyc')
+                }}>
+                    <RiLockPasswordLine />
+                    <p>kyc</p>
+                </div>
+
+                <div className="dropdown-tabs" onClick={() => {
+                    logout()
+                }}>
+                    <FiLogOut />
+                    <p>logout</p>
+                </div>
+            </div>
         </div>
     )
 }
