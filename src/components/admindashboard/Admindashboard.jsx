@@ -50,7 +50,10 @@ const Admindashboard = () => {
     const res = await getUsers()
 
     setLoader(false)
-    if (res) {
+    // getUsers() returns a bare array on success, but an error object
+    // (e.g. {status:401, message:'No token provided'}) when unauthenticated
+    // or on server error - only an array is safe to hand to users.reduce/filter.
+    if (Array.isArray(res)) {
       setUsers(res)
     }
     else {
@@ -514,6 +517,11 @@ const Admindashboard = () => {
 
     if (res.status === 200) {
       setAuthToken(res.token);
+      // The mount-time fetchUsers()/fetchTraders() ran before login, with no
+      // token, so they only ever got the auth-error response - refetch now
+      // that a valid token exists.
+      fetchUsers();
+      fetchTraders();
     } else {
       Toast.fire({
         icon: 'error',

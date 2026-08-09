@@ -230,7 +230,12 @@
   display: flex;
   align-items: center;
   gap: 14px;
-  margin-top: 6px;
+  margin-top: 10px;
+  margin-bottom: 12px;
+}
+
+.hero-terminal-container {
+  margin-top: 16px;
 }
 
 .avatar-stack {
@@ -671,10 +676,14 @@
     max-width: 100% !important;
   }
 
+  .hero-social-proof {
+    margin-bottom: 20px !important;
+  }
+
   .hero-terminal-container {
     width: 100% !important;
     max-width: 100% !important;
-    margin: 0 auto !important;
+    margin: 40px auto 0 !important;
     box-sizing: border-box;
   }
 

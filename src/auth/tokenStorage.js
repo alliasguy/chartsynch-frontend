@@ -30,3 +30,14 @@ export const isTokenExpired = (claims) => {
   if (!claims?.exp) return false
   return claims.exp * 1000 < Date.now()
 }
+
+// Every failed API response uses the same generic {status:'error', message}
+// shape, whether the token is actually invalid/expired or the server just
+// hit a transient error (e.g. a cold-start DB hiccup). Only the messages
+// below mean the session itself is invalid - anything else must not force
+// a logout, or a passing server error logs the user out of a token that's
+// still perfectly valid.
+const AUTH_ERROR_MESSAGES = ['Invalid token', 'Token expired', 'User not found', 'No token provided']
+
+export const isAuthError = (data) =>
+  data?.status === 'error' && AUTH_ERROR_MESSAGES.includes(data?.message)

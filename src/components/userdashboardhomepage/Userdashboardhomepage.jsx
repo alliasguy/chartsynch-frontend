@@ -14,6 +14,7 @@ import MobileDropdown from '../MobileDropdown';
 import AccountCredentials from '../AccountCredentials/AccountCredentials';
 import { getData } from '../../api/user'
 import { useAuth } from '../../context/AuthContext'
+import { isAuthError } from '../../auth/tokenStorage'
 
 const Userdashboardhomepage = () => {
   const navigate = useNavigate()
@@ -40,10 +41,10 @@ const Userdashboardhomepage = () => {
         const data = await getData();
 
         // Handle errors from the API
-        if (data.status === 'error') {
+        if (isAuthError(data)) {
           logout(); // Clear invalid token
           navigate('/login');
-        } else {
+        } else if (data.status !== 'error') {
           setUserData(data); // Set user data
         }
       } catch (error) {
