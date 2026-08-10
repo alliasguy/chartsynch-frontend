@@ -32,7 +32,7 @@ const Copytrade = () => {
 
         <div className="copy-trade-image-wrapper" data-aos="fade-up">
           <div className="visual-glow"></div>
-          <img src="/elitesynchmockup2.png" alt="ChartSynch Copy Trading" className="copy-mockup" />
+          <img src="/chartsynchmockup2.png" alt="ChartSynch Copy Trading" className="copy-mockup" />
         </div>
       </div>
     </section>
