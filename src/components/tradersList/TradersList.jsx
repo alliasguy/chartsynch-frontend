@@ -11,7 +11,7 @@ const TradersList = () => {
     {
       id: 1,
       rank: 1,
-      name: 'CryptoKing_99',
+      name: 'CryptoQueen_99',
       style: 'Scalper • High ROI',
       winRate: '98.4%',
       returnRate: '+1,240%',
