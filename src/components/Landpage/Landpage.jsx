@@ -61,7 +61,6 @@ const Landpage = () => {
           {/* Social Proof Avatars Badge */}
           <div className="hero-social-proof">
             <div className="avatar-stack">
-              <img src="/elitesynchmock7.jpeg" alt="Trader" className="stack-avatar" />
               <div className="stack-avatar av-bg-1">ST</div>
               <div className="stack-avatar av-bg-2">AW</div>
               <div className="stack-avatar av-bg-3">+85</div>
