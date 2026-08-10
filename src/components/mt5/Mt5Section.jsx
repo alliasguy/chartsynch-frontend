@@ -40,7 +40,7 @@ const Mt5Section = () => {
 
           <div className="mt5-visuals" data-aos="fade-left">
             <div className="visual-backdrop"></div>
-            <img src="/chartsynchmockup3.png" className='platform-mockup' alt="Trading Platform" />
+            <img src="/chartsynchmockup1.png" className='platform-mockup' alt="Trading Platform" />
           </div>
         </div>
       </div>
