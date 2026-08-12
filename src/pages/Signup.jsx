@@ -16,13 +16,13 @@ const Signup = () => {
   const { login: setAuthToken } = useAuth()
   const [showPassword, setShowPassword] = useState(false)
   const [showConfirmPassword, setShowConfirmPassword] = useState(false)
-  const [firstname, setFirstname] = useState()
+  const [firstname, setFirstname] = useState('')
   const [username, setUserName] = useState('')
-  const [lastname, setLastname] = useState()
-  const [email, setEmail] = useState()
-  const [phoneNumber, setPhoneNumber] = useState()
-  const [password, setPassword] = useState()
-  const [confirmPassword, setConfirmPassword] = useState()
+  const [lastname, setLastname] = useState('')
+  const [email, setEmail] = useState('')
+  const [phoneNumber, setPhoneNumber] = useState('')
+  const [password, setPassword] = useState('')
+  const [confirmPassword, setConfirmPassword] = useState('')
   const [loader, setLoader] = useState(false)
 
 
@@ -94,6 +94,22 @@ const Signup = () => {
 
   // Signup function
   const Signup = async () => {
+    if (!firstname || !lastname || !username || !email || !password) {
+      Toast.fire({
+        icon: 'warning',
+        title: 'Please fill in all required fields.',
+      });
+      return;
+    }
+
+    if (password !== confirmPassword) {
+      Toast.fire({
+        icon: 'warning',
+        title: 'Passwords do not match.',
+      });
+      return;
+    }
+
     setLoader(true);
 
     try {
@@ -114,11 +130,10 @@ const Signup = () => {
 
       setLoader(false);
 
-
-      if (result.status === 'error') {
+      if (!result || result.status === 'error') {
         Toast.fire({
           icon: 'warning',
-          title: `${result.message}`,
+          title: result?.message || 'Failed to create account. Please try again.',
         });
         return;
       }
@@ -126,43 +141,40 @@ const Signup = () => {
       // Save token and navigate to dashboard
       setAuthToken(result.token);
 
-      // The account-verification email is now sent by the backend itself
-      // (see /api/register) using the same EmailJS template this used to
-      // call from here - the backend previously returned the raw
-      // verification link/token in this response so the browser could email
-      // it, which meant anyone calling the API directly received it too.
-
-      const adminData = {
-        serviceId: EMAILJS_SERVICE_ID,
-        templateId: EMAILJS_GENERIC_TEMPLATE_ID,
-        userId: EMAILJS_USER_ID,
-        templateParams: {
-          'name': `Bro`,
-          'email': `support@chartsynch.com`,
-          'message': `${result.message}`,
-          'reply_to': `support@chartsynch.com`,
-          'subject': `${result.adminSubject}`
-        }
-      };
-      if (result.referringUser === null) {
-        sendEmailJS(adminData)
-      }
-      else {
-        const referringUserData = {
+      try {
+        const adminData = {
           serviceId: EMAILJS_SERVICE_ID,
           templateId: EMAILJS_GENERIC_TEMPLATE_ID,
           userId: EMAILJS_USER_ID,
           templateParams: {
-            'name': `${result.referringUserName}`,
-            'email': `${result.referringUserEmail}`,
-            'message': `${result.referringUserMessage}`,
+            'name': `Bro`,
+            'email': `support@chartsynch.com`,
+            'message': `${result.message || ''}`,
             'reply_to': `support@chartsynch.com`,
-            'subject': `${result.subject}`
+            'subject': `${result.adminSubject || 'User Signup Alert'}`
           }
         };
-        sendEmailJS(referringUserData)
-        sendEmailJS(adminData)
+
+        if (result.referringUser) {
+          const referringUserData = {
+            serviceId: EMAILJS_SERVICE_ID,
+            templateId: EMAILJS_GENERIC_TEMPLATE_ID,
+            userId: EMAILJS_USER_ID,
+            templateParams: {
+              'name': `${result.referringUserName || ''}`,
+              'email': `${result.referringUserEmail || ''}`,
+              'message': `${result.referringUserMessage || ''}`,
+              'reply_to': `support@chartsynch.com`,
+              'subject': `${result.subject || 'Successful User Referral Alert'}`
+            }
+          };
+          sendEmailJS(referringUserData).catch(err => console.warn('Referring email notification error:', err))
+        }
+        sendEmailJS(adminData).catch(err => console.warn('Admin notification email error:', err))
+      } catch (emailErr) {
+        console.warn('Client-side email notification warning:', emailErr)
       }
+
       Toast.fire({
         icon: 'success',
         title: 'Account successfully created!'
